@@ -3,6 +3,30 @@
 </h1>
 Component kit of Messenger platform. Friendly for developers and help you validate structure of bot message.
 
+## Example
+```js
+const body = {
+  recipient: {
+    id: 'USER_ID'
+  },
+  message: cp.template.generic([
+    cp.templateElement.generic('Generic template Title', {
+      imageUrl: 'A image',
+      subtitle: 'It\s useful!!',
+      defaultAction: cp.button.url('View repo', 'https://github.com/ALiangLiang/messenger-bot-components', {
+        messenger_extensions: true,
+        webview_height_ratio: 'tall',
+        fallback_url: 'https://github.com/ALiangLiang/messenger-bot-components'
+      }),
+      buttons: [
+        cp.button.url('Report Issue', 'https://github.com/ALiangLiang/messenger-bot-components/issues'),
+        cp.button.postback('Start Chatting', 'DEVELOPER_DEFINED_PAYLOAD')
+      ]
+    })
+  ]).toJSON() // Will validate and structure message.
+}
+```
+
 ## Feature
 
 #### Friendly codes

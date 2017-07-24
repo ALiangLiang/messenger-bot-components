@@ -3,9 +3,29 @@
   "version": "0.1.0",
   "description": "Component kit of Messenger platform.",
   "main": "index.js",
+  "keywords": [
+    "messenger",
+    "messenger-bot",
+    "messenger-platform",
+    "bot",
+    "components",
+    "sdk",
+    "kit"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "dependencies": {
+    "joi": "^10.6.0"
+  }
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ALiangLiang/messenger-bot-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ALiangLiang/messenger-bot-components/issues"
+  },
+  "homepage": "https://github.com/ALiangLiang/messenger-bot-components",
   "author": "ALiangLiang",
-  "license": "MIT"
+  "license": "MIT",
 }
