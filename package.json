@@ -1,0 +1,11 @@
+{
+  "name": "messenger-bot-components",
+  "version": "0.1.0",
+  "description": "Component kit of Messenger platform.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ALiangLiang",
+  "license": "MIT"
+}
