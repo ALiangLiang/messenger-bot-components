@@ -1,6 +1,6 @@
 {
   "name": "messenger-bot-components",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Component kit of Messenger platform.",
   "main": "index.js",
   "keywords": [
@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "joi": "^10.6.0"
-  }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ALiangLiang/messenger-bot-components.git"
@@ -27,5 +27,5 @@
   },
   "homepage": "https://github.com/ALiangLiang/messenger-bot-components",
   "author": "ALiangLiang",
-  "license": "MIT",
+  "license": "MIT"
 }
