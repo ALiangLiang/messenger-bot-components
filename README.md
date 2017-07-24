@@ -154,6 +154,7 @@ Messenger Platform API is still on dev. So we need update the module usually. If
 
 - [ ] test script
 - [ ] update more components
+- [ ] auto fix structure. ex: split too long text message.
 - [ ] perfect english README
 
 ## Conduct rule
