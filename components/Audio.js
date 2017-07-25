@@ -1,6 +1,6 @@
 const Joi = require('joi')
 
-class Aideo extends require('./Basic') {
+class Audio extends require('./Basic') {
     constructor(url) {
         const
             constructure = {
@@ -23,4 +23,4 @@ class Aideo extends require('./Basic') {
     }
 }
 
-module.exports = Aideo
+module.exports = Audio
