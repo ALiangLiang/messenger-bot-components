@@ -73,7 +73,7 @@ const body = {
   }
 }
 ```
-OMG!! It's sooooooo ugly. But now, you can write it for another way.
+OMG!! It's sooooooo ugly. But now, you can write it in another way.
 ##### use this module
 ```js
 const Components = require('messenger-bot-components');
@@ -154,7 +154,9 @@ Messenger Platform API is still on dev. So we need update the module usually. If
 
 - [ ] test script
 - [ ] update more components
+- [ ] fill jsapi
 - [ ] auto fix structure. ex: split too long text message.
+- [ ] a cute logo
 - [ ] perfect english README
 
 ## Conduct rule
