@@ -2,8 +2,6 @@ const
     Joi = require('joi'),
     Button_Url = require('./Button/Url'),
     Button_Postback = require('./Button/Postback'),
-    Button_AccountLink = require('./Button/AccountLink'),
-    Button_AccountUnlink = require('./Button/AccountUnlink'),
     Button_Nested = require('./Button/Nested')
 
 class PersistentMenuLocale extends require('./Basic') {
@@ -20,8 +18,6 @@ class PersistentMenuLocale extends require('./Basic') {
                 call_to_actions: Joi.array().min(1).max(3).items(Joi.alternatives().try([
                         Joi.object().type(Button_Url),
                         Joi.object().type(Button_Postback),
-                        Joi.object().type(Button_AccountLink),
-                        Joi.object().type(Button_AccountUnlink),
                         Joi.object().type(Button_Nested)
                     ]))
                     .when('composer_input_disabled', {

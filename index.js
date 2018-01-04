@@ -1,4 +1,4 @@
-/**
+String/**
  * Module dependencies.
  * @private
  */
@@ -142,45 +142,16 @@ module.exports = function(option = {}) {
             /**
              * Serialize receipt template structure.
              *
-             * @param {TemplateElement[]} elements
+             * @param {String} recipientName
+             * @param {String} orderNumber
+             * @param {String} currency
+             * @param {String} paymentMethod
+             * @param {Object} summary
              * @param {Object} options
              * @return {Object}
              * @api public
              */
-            receipt: class Template_Receipt extends require('./components/Basic') {
-                constructor(recipient_name, order_number, currency, payment_method, summary, option = {}) {
-                    super()
-                    let
-                        payload = {
-                            template_type: 'receipt',
-                            recipient_name: recipient_name,
-                            recipient_name: option.recipient_name,
-                            order_number: order_number,
-                            currency: currency,
-                            payment_method: payment_method,
-                            timestamp: option.timestamp,
-                            order_url: option.order_url,
-                            elements: option.elements,
-                            address: option.address,
-                            summary: summary,
-                        },
-                        constructure = {
-                            attachment: {
-                                type: 'template',
-                                payload: payload
-                            }
-                        }
-
-                    if (strictMode) {
-                        if (option.elements.length > 100) {
-                            console.error(`The elements length should between 0 to 100`)
-                            throw new Error(`The elements length should between 0 to 100`)
-                        }
-                    }
-
-                    this._constructure = constructure
-                }
-            }
+            receipt: (...argu) => new (require('./components/Template/Receipt'))(...argu)
         },
 
         templateElement: {
@@ -203,7 +174,18 @@ module.exports = function(option = {}) {
              * @return {Object}
              * @api public
              */
-            list: (...argu) => new (require('./components/Template/List').element)(...argu)
+            list: (...argu) => new (require('./components/Template/List').element)(...argu),
+
+            /**
+             * Serialize receipt template element structure.
+             *
+             * @param {String} title
+             * @param {Number} price
+             * @param {Object} options
+             * @return {Object}
+             * @api public
+             */
+            receipt: (...argu) => new (require('./components/Template/Receipt').element)(...argu)
         },
 
         /**
