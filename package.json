@@ -1,6 +1,6 @@
 {
   "name": "messenger-bot-components",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Component kit of Messenger platform.",
   "main": "index.js",
   "keywords": [
