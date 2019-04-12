@@ -1,6 +1,6 @@
 {
   "name": "messenger-bot-components",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Component kit of Messenger platform.",
   "main": "index.js",
   "keywords": [
@@ -27,5 +27,14 @@
   },
   "homepage": "https://github.com/ALiangLiang/messenger-bot-components",
   "author": "ALiangLiang",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^5.4.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.0",
+    "eslint-plugin-standard": "^4.0.0",
+    "typescript": "^3.4.3"
+  }
 }
