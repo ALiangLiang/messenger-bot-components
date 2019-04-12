@@ -1,16 +1,9 @@
-const Joi = require('joi')
+import Abstract from './Abstract'
 
-class Text extends require('./Basic') {
-  constructor (text) {
-    const
-      constructure = {
-        text: text
-      }
-    const schema = Joi.object().keys({
-      text: Joi.string().max(640).required()
-    })
-    super(constructure, schema)
+export default class Text extends Abstract {
+  constructor (text: String) {
+    const constructure = { text }
+
+    super(constructure)
   }
 }
-
-module.exports = Text

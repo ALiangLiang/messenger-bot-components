@@ -1,18 +1,19 @@
-const
-  Joi = require('joi')
-const GreetingItem = require('./GreetingItem')
+import Abstract from './Abstract'
 
-class Greeting extends require('./Basic') {
-  constructor (greetingItems) {
-    const
-      constructure = {
-        greeting: greetingItems
-      }
-    const schema = Joi.object().keys({
-      greeting: Joi.array().items(Joi.object().type(GreetingItem))
-    }).required()
-    super(constructure, schema)
+export class GreetingItem extends Abstract {
+  constructor (text: String, locale: String) {
+    const constructure = { text, locale }
+
+    super(constructure)
   }
 }
 
-module.exports = Greeting
+export default class Greeting extends Abstract {
+  constructor (greetingItems: GreetingItem[]) {
+    const constructure = {
+      greeting: greetingItems
+    }
+
+    super(constructure)
+  }
+}

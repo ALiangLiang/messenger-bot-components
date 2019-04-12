@@ -1,26 +1,22 @@
-const Joi = require('joi')
+import Abstract from '../Abstract'
 
-class Button_Url extends require('./../Basic') {
-  constructor (title, url, option = {}) {
-    const
-      constructure = {
-        type: 'web_url',
-        title: title,
-        url: url,
-        webview_height_ratio: option.webview_height_ratio,
-        messenger_extensions: option.messenger_extensions,
-        fallback_url: option.fallback_url
-      }
-    const schema = Joi.object().keys({
-      type: Joi.string().valid('web_url').required(),
-      title: Joi.string().max(20).required(),
-      url: Joi.string().required(),
-      webview_height_ratio: Joi.string().valid(['compact', 'tall', 'full']),
-      messenger_extensions: Joi.boolean(),
-      fallback_url: Joi.string()
-    })
-    super(constructure, schema)
-  }
+interface ButtonUrlOption {
+  webviewHeightRatio?: String
+  messengerExtensions?: String
+  fallbackUrl?: String
 }
 
-module.exports = Button_Url
+export default class ButtonUrl extends Abstract {
+  constructor (title: String, url: String, option: ButtonUrlOption) {
+    const constructure = {
+      type: 'web_url',
+      title: title,
+      url: url,
+      webview_height_ratio: option.webviewHeightRatio,
+      messenger_extensions: option.messengerExtensions,
+      fallback_url: option.fallbackUrl
+    }
+
+    super(constructure)
+  }
+}

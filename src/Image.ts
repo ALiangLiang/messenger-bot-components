@@ -1,34 +1,25 @@
-const Joi = require('joi')
+import Abstract from './Abstract'
 
-class Image extends require('./Basic') {
-  constructor (urlOrAttachmentId, option = {}) {
-    const
-      url = (!Number(urlOrAttachmentId)) ? urlOrAttachmentId : void 0
-    const attachmentId = (Number(urlOrAttachmentId)) ? urlOrAttachmentId : void 0
-
-    const
-      constructure = {
-        attachment: {
-          type: 'image',
-          payload: {
-            url: url,
-            attachment_id: attachmentId,
-            is_reusable: option.isReusable
-          }
-        }
-      }
-    const schema = Joi.object().keys({
-      attachment: {
-        type: 'image',
-        payload: Joi.object().keys({
-          url: Joi.string().uri().optional(),
-          attachment_id: Joi.string().optional(),
-          is_reusable: Joi.boolean().optional().default(false)
-        }).nand('url', 'attachment_id')
-      }
-    })
-    super(constructure, schema)
-  }
+export interface ImageOption {
+  isReusable?: Boolean
 }
 
-module.exports = Image
+export default class Image extends Abstract {
+  constructor (urlOrAttachmentId: Number | String, option: ImageOption = {}) {
+    const url = (!Number(urlOrAttachmentId)) ? urlOrAttachmentId : void 0
+    const attachmentId = (Number(urlOrAttachmentId)) ? urlOrAttachmentId : void 0
+
+    const constructure = {
+      attachment: {
+        type: 'image',
+        payload: {
+          url: url,
+          attachment_id: attachmentId,
+          is_reusable: option.isReusable
+        }
+      }
+    }
+
+    super(constructure)
+  }
+}

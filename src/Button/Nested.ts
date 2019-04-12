@@ -1,35 +1,18 @@
-const
-  Joi = require('joi')
-const Button_Url = require('./Url')
-const Button_Postback = require('./Postback')
-const Button_AccountLink = require('./AccountLink')
-const Button_AccountUnlink = require('./AccountUnlink')
+import Abstract from '../Abstract'
 
-class Button_Nested extends require('./../Basic') {
-  constructor (title, callToActions, option = {}) {
-    const
-      constructure = {
-        type: 'nested',
-        title: title,
-        call_to_actions: callToActions
-      }
-    const schema = Joi.object().keys({
+import ButtonUrl from './Url'
+import ButtonPostback from './Postback'
+import ButtonAccountLink from './AccountLink'
+import ButtonAccountUnlink from './AccountUnlink'
+
+export default class ButtonNested extends Abstract {
+  constructor (title: String, callToActions: ButtonUrl[] | ButtonPostback[] | ButtonAccountLink[] | ButtonAccountUnlink[]) {
+    const constructure = {
       type: 'nested',
-      title: Joi.string().max(30).required(),
-      call_to_actions: Joi.array().min(1).max(5).items(Joi.alternatives().try([
-        Joi.object().type(Button_Url),
-        Joi.object().type(Button_Postback),
-        Joi.object().type(Button_Nested),
-        Joi.object().type(Button_AccountLink),
-        Joi.object().type(Button_AccountUnlink)
-      ]))
-        .when('composer_input_disabled', {
-          is: true,
-          then: Joi.required()
-        })
-    })
-    super(constructure, schema)
+      title: title,
+      call_to_actions: callToActions
+    }
+
+    super(constructure)
   }
 }
-
-module.exports = Button_Nested

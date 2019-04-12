@@ -1,38 +1,53 @@
-const
-  Joi = require('joi')
-const Template_Element_Generic = require('./Element/Generic')
+import Abstract from '../Abstract'
 
-class Template_Generic extends require('./../Basic') {
-  constructor (elements) {
-    const
-      constructure = {
-        attachment: {
-          type: 'template',
-          payload: {
-            template_type: 'generic',
-            elements: elements
-          }
-        }
-      }
-    const schema = Joi.object().keys({
+import ButtonUrl from '../Button/Url'
+import ButtonPostback from '../Button/Postback'
+import ButtonPhoneNumber from '../Button/PhoneNumber'
+import ButtonElementShare from '../Button/ElementShare'
+import ButtonAccountLink from '../Button/AccountLink'
+import ButtonAccountUnlink from '../Button/AccountUnlink'
+
+interface TemplateElementGenericOption {
+  imageUrl?: String
+  subtitle?: String
+  defaultAction?: String
+  buttons?: ButtonUrl[] | ButtonPostback[] | ButtonPhoneNumber[] | ButtonElementShare[] | ButtonAccountLink[] | ButtonAccountUnlink[]
+}
+
+export class TemplateElementGeneric extends Abstract {
+  constructor (title: String, option: TemplateElementGenericOption) {
+    const constructure = {
+      title: title,
+      image_url: option.imageUrl,
+      subtitle: option.subtitle,
+      default_action: option.defaultAction,
+      buttons: option.buttons
+    }
+
+    super(constructure)
+  }
+}
+
+export default class TemplateGeneric extends Abstract {
+  constructor (elements: TemplateElementGeneric[]) {
+    const constructure = {
       attachment: {
         type: 'template',
         payload: {
           template_type: 'generic',
-          elements: Joi.array().min(1).max(10).items(Joi.object().type(Template_Element_Generic)).required()
+          elements: elements
         }
       }
-    })
-    super(constructure, schema)
+    }
+
+    super(constructure)
   }
 
-  static get element () {
-    return Template_Element_Generic
+  static get Element () {
+    return TemplateElementGeneric
   }
 
-  get element () {
-    return Template_Element_Generic
+  get Element () {
+    return TemplateElementGeneric
   }
 }
-
-module.exports = Template_Generic

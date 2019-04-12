@@ -1,18 +1,29 @@
-const
-  Joi = require('joi')
-const PersistentMenuLocale = require('./PersistentMenuLocale')
+import Abstract from './Abstract'
 
-class PersistentMenu extends require('./Basic') {
-  constructor (persistentMenuLocales) {
-    const
-      constructure = {
-        persistent_menu: persistentMenuLocales
-      }
-    const schema = Joi.object().keys({
-      persistent_menu: Joi.array().items(Joi.object().type(PersistentMenuLocale)).required()
-    })
-    super(constructure, schema)
+import ButtonUrl from './Button/Url'
+import ButtonPostback from './Button/Postback'
+import ButtonNested from './Button/Nested'
+
+interface PersistentMenuLocaleOption {
+  composerInputDisabled?: Boolean
+}
+
+export class PersistentMenuLocale extends Abstract {
+  constructor (locale: String, callToActions: ButtonUrl[] | ButtonPostback[] | ButtonNested[], option: PersistentMenuLocaleOption = {}) {
+    const constructure = {
+      locale: locale,
+      composer_input_disabled: option.composerInputDisabled,
+      call_to_actions: callToActions
+    }
+
+    super(constructure)
   }
 }
 
-module.exports = PersistentMenu
+export default class PersistentMenu extends Abstract {
+  constructor (persistentMenuLocales: PersistentMenuLocale[]) {
+    const constructure = { persistent_menu: persistentMenuLocales }
+
+    super(constructure)
+  }
+}

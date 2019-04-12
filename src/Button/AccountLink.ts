@@ -1,18 +1,12 @@
-const Joi = require('joi')
+import Abstract from '../Abstract'
 
-class Button_AccountLink extends require('./../Basic') {
-  constructor (url) {
-    const
-      constructure = {
-        type: 'account_link',
-        url: url
-      }
-    const schema = Joi.object().keys({
+export default class ButtonAccountLink extends Abstract {
+  constructor (url: String) {
+    const constructure = {
       type: 'account_link',
-      url: Joi.string().uri().required()
-    })
-    super(constructure, schema)
+      url: url
+    }
+
+    super(constructure)
   }
 }
-
-module.exports = Button_AccountLink

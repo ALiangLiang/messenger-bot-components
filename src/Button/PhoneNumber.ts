@@ -1,20 +1,13 @@
-const Joi = require('joi')
+import Abstract from '../Abstract'
 
-class Button_PhoneNumber extends require('./../Basic') {
-  constructor (title, phoneNumber) {
-    const
-      constructure = {
-        type: 'phone_number',
-        title: title,
-        payload: phoneNumber
-      }
-    const schema = Joi.object().keys({
+export default class ButtonPhoneNumber extends Abstract {
+  constructor (title: String, phoneNumber: String) {
+    const constructure = {
       type: 'phone_number',
-      title: Joi.string().max(20).required(),
-      payload: Joi.string().max(1000).required()
-    })
-    super(constructure, schema)
+      title: title,
+      payload: phoneNumber
+    }
+
+    super(constructure)
   }
 }
-
-module.exports = Button_PhoneNumber

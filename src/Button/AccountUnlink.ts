@@ -1,12 +1,9 @@
-const Joi = require('joi')
+import Abstract from '../Abstract'
 
-class Button_AccountUnlink extends require('./../Basic') {
+export default class ButtonAccountUnlink extends Abstract {
   constructor () {
-    const constructure = {
-      type: 'account_unlink'
-    }
+    const constructure = { type: 'account_unlink' }
+
     super(constructure)
   }
 }
-
-module.exports = Button_AccountUnlink

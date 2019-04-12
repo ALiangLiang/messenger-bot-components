@@ -1,26 +1,14 @@
-const Joi = require('joi')
+import Abstract from './Abstract'
 
-class Video extends require('./Basic') {
-  constructor (url) {
-    const
-      constructure = {
-        attachment: {
-          type: 'video',
-          payload: {
-            url: url
-          }
-        }
-      }
-    const schema = Joi.object().keys({
+export default class Video extends Abstract {
+  constructor (url: String) {
+    const constructure = {
       attachment: {
         type: 'video',
-        payload: {
-          url: Joi.string().uri().optional()
-        }
+        payload: { url }
       }
-    })
-    super(constructure, schema)
+    }
+
+    super(constructure)
   }
 }
-
-module.exports = Video

@@ -1,12 +1,9 @@
-const Joi = require('joi')
+import Abstract from '../Abstract'
 
-class Button_ElementShare extends require('./../Basic') {
+export default class ButtonElementShare extends Abstract {
   constructor () {
-    const constructure = {
-      type: 'element_share'
-    }
+    const constructure = { type: 'element_share' }
+
     super(constructure)
   }
 }
-
-module.exports = Button_ElementShare

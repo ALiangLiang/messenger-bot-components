@@ -1,15 +1,45 @@
-const
-  Joi = require('joi')
-const Button_Url = require('./../Button/Url')
-const Button_Postback = require('./../Button/Postback')
-const Button_PhoneNumber = require('./../Button/PhoneNumber')
-const Button_ElementShare = require('./../Button/ElementShare')
-const Button_AccountLink = require('./../Button/AccountLink')
-const Button_AccountUnlink = require('./../Button/AccountUnlink')
-const Template_Element_List = require('./Element/List')
+import Abstract from '../Abstract'
 
-class Template_List extends require('./../Basic') {
-  constructor (elements, option = {}) {
+import ButtonUrl from '../Button/Url'
+import ButtonPostback from '../Button/Postback'
+import ButtonPhoneNumber from '../Button/PhoneNumber'
+import ButtonElementShare from '../Button/ElementShare'
+import ButtonAccountLink from '../Button/AccountLink'
+import ButtonAccountUnlink from '../Button/AccountUnlink'
+
+interface TemplateElementListOption {
+  imageUrl?: String
+  subtitle?: String
+  defaultAction?: String
+  buttons?: ButtonUrl[] | ButtonPostback[] | ButtonPhoneNumber[] | ButtonElementShare[] | ButtonAccountLink[] | ButtonAccountUnlink[]
+}
+
+export class TemplateElementList extends Abstract {
+  constructor (title: String, option: TemplateElementListOption) {
+    const constructure = {
+      title: title,
+      image_url: option.imageUrl,
+      subtitle: option.subtitle,
+      default_action: option.defaultAction,
+      buttons: option.buttons
+    }
+
+    super(constructure)
+  }
+}
+
+const enum TopElementStyle {
+  compact = 'compact',
+  large = 'large',
+}
+
+interface TemplateListOption {
+  topElementStyle?: TopElementStyle
+  buttons?: ButtonUrl[] | ButtonPostback[] | ButtonPhoneNumber[] | ButtonElementShare[] | ButtonAccountLink[] | ButtonAccountUnlink[]
+}
+
+export default class TemplateList extends Abstract {
+  constructor (elements: TemplateElementList[], option: TemplateListOption = {}) {
     const
       constructure = {
         attachment: {
@@ -22,34 +52,15 @@ class Template_List extends require('./../Basic') {
           }
         }
       }
-    const schema = Joi.object().keys({
-      attachment: {
-        type: 'template',
-        payload: {
-          template_type: 'list',
-          top_element_style: Joi.string().allow('large', 'compact'),
-          buttons: Joi.array().max(1).items(Joi.alternatives().try([
-            Joi.object().type(Button_Url),
-            Joi.object().type(Button_Postback),
-            Joi.object().type(Button_PhoneNumber),
-            Joi.object().type(Button_ElementShare),
-            Joi.object().type(Button_AccountLink),
-            Joi.object().type(Button_AccountUnlink)
-          ])),
-          elements: Joi.array().min(2).max(4).items(Joi.object().type(Template_Element_List)).required()
-        }
-      }
-    })
-    super(constructure, schema)
+
+    super(constructure)
   }
 
-  static get element () {
-    return Template_Element_List
+  static get Element () {
+    return TemplateElementList
   }
 
-  get element () {
-    return Template_Element_List
+  get Element () {
+    return TemplateElementList
   }
 }
-
-module.exports = Template_List

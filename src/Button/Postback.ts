@@ -1,20 +1,13 @@
-const Joi = require('joi')
+import Abstract from '../Abstract'
 
-class Button_Postback extends require('./../Basic') {
-  constructor (title, payload) {
-    const
-      constructure = {
-        type: 'postback',
-        title: title,
-        payload: payload
-      }
-    const schema = Joi.object().keys({
+export default class ButtonPostback extends Abstract {
+  constructor (title: string, payload: string) {
+    const constructure = {
       type: 'postback',
-      title: Joi.string().max(20).required(),
-      payload: Joi.string().max(1000).required()
-    })
-    super(constructure, schema)
+      title: title,
+      payload: payload
+    }
+
+    super(constructure)
   }
 }
-
-module.exports = Button_Postback

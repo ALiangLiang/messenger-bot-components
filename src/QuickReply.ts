@@ -1,20 +1,31 @@
-const
-  Joi = require('joi')
-const QuickReplyItem = require('./QuickReplyItem')
+import Abstract from './Abstract'
 
-class QuickReply extends require('./Basic') {
-  constructor (text, quickReplies) {
-    const
-      constructure = {
-        text: text,
-        quick_replies: quickReplies
-      }
-    const schema = Joi.object().keys({
-      text: Joi.string().required(),
-      quick_replies: Joi.array().max(11).items(Joi.object().type(QuickReplyItem)).required()
-    })
-    super(constructure, schema)
+export interface QuickReplyItemOption {
+  title?: String
+  payload?: String
+  imageUrl?: String
+}
+
+export class QuickReplyItem extends Abstract {
+  constructor (contentType: String, option: QuickReplyItemOption = {}) {
+    const constructure = {
+      title: option.title,
+      content_type: contentType,
+      payload: option.payload,
+      image_url: option.imageUrl
+    }
+
+    super(constructure)
   }
 }
 
-module.exports = QuickReply
+export default class QuickReply extends Abstract {
+  constructor (text: String, quickReplies: QuickReplyItem[]) {
+    const constructure = {
+      text,
+      quick_replies: quickReplies
+    }
+
+    super(constructure)
+  }
+}

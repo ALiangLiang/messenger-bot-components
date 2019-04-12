@@ -1,20 +1,12 @@
-const Joi = require('joi')
+import Abstract from './Abstract'
 
-class GetStarted extends require('./Basic') {
-  constructor (payload) {
+export default class GetStarted extends Abstract {
+  constructor (payload: String) {
     const
       constructure = {
-        get_started: {
-          payload: payload
-        }
+        get_started: { payload }
       }
-    const schema = Joi.object().keys({
-      get_started: Joi.object().keys({
-        payload: Joi.string().min(1).max(1000).required()
-      }).required()
-    })
-    super(constructure, schema)
+
+    super(constructure)
   }
 }
-
-module.exports = GetStarted
