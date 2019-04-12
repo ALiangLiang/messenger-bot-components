@@ -13,7 +13,7 @@
     "kit"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc components/**.ts"
   },
   "dependencies": {
     "joi": "^10.6.0"
