@@ -1,16 +1,27 @@
 import { Abstract } from '../Abstract'
 
-import { ButtonUrl } from '../Button/Url'
+import { ButtonUrl, ButtonUrlOption } from '../Button/Url'
 import { ButtonPostback } from '../Button/Postback'
 import { ButtonPhoneNumber } from '../Button/PhoneNumber'
 import { ButtonElementShare } from '../Button/ElementShare'
 import { ButtonAccountLink } from '../Button/AccountLink'
 import { ButtonAccountUnlink } from '../Button/AccountUnlink'
 
+interface DefaultActionOption extends ButtonUrlOption {}
+
+/**
+ * DefaultAction accepts the same properties as URL button, except title.
+ */
+export class DefaultAction extends ButtonUrl {
+  constructor (url: String, option: DefaultActionOption) {
+    super(null, url, option)
+  }
+}
+
 interface TemplateElementGenericOption {
   imageUrl?: String
   subtitle?: String
-  defaultAction?: String
+  defaultAction?: DefaultAction
   buttons?: ButtonUrl[] | ButtonPostback[] | ButtonPhoneNumber[] | ButtonElementShare[] | ButtonAccountLink[] | ButtonAccountUnlink[]
 }
 
@@ -25,6 +36,14 @@ export class TemplateElementGeneric extends Abstract {
     }
 
     super(constructure)
+  }
+
+  static get DefaultAction () {
+    return DefaultAction
+  }
+
+  get DefaultAction () {
+    return DefaultAction
   }
 }
 

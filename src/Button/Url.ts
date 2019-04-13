@@ -1,13 +1,19 @@
 import { Abstract } from '../Abstract'
 
-interface ButtonUrlOption {
-  webviewHeightRatio?: String
-  messengerExtensions?: String
+export enum WebviewHeightRatio {
+  COMPACT = 'compact',
+  TALL = 'tall',
+  FULL = 'full'
+}
+
+export interface ButtonUrlOption {
+  webviewHeightRatio?: WebviewHeightRatio | 'compact' | 'tall' | 'full'
+  messengerExtensions?: Boolean
   fallbackUrl?: String
 }
 
 export class ButtonUrl extends Abstract {
-  constructor (title: String, url: String, option: ButtonUrlOption) {
+  constructor (title: String | null, url: String, option: ButtonUrlOption) {
     const constructure = {
       type: 'web_url',
       title: title,
@@ -18,5 +24,13 @@ export class ButtonUrl extends Abstract {
     }
 
     super(constructure)
+  }
+
+  static get WebviewHeightRatio () {
+    return WebviewHeightRatio
+  }
+
+  get WebviewHeightRatio () {
+    return WebviewHeightRatio
   }
 }
