@@ -1,38 +1,44 @@
 <h1 align="center">
-  messenger-bot-components
+  Messenger Bot Components
 </h1>
+
+![npm type definitions](https://img.shields.io/npm/types/typescript.svg)
+
 Component kit of Messenger platform. Friendly for developers and help you validate structure of bot message.
 
 ## Example
+
 ```js
 const body = {
   recipient: {
     id: 'USER_ID'
   },
-  message: cp.template.generic([
-    cp.templateElement.generic('Generic template Title', {
+  message: new TemplateGeneric([
+    new TemplateGeneric.Element('Generic template Title', {
       imageUrl: 'A image',
       subtitle: 'It\s useful!!',
-      defaultAction: cp.button.url('View repo', 'https://github.com/ALiangLiang/messenger-bot-components', {
-        messenger_extensions: true,
-        webview_height_ratio: 'tall',
-        fallback_url: 'https://github.com/ALiangLiang/messenger-bot-components'
+      defaultAction: new TemplateGeneric.Element.DefaultAction('https://webview', {
+        webviewHeightRatio: TemplateGeneric.Element.DefaultAction.WebviewHeightRatio.COMPACT,
+        messengerExtensions: true,
+        fallbackUrl: 'https://website-not-support-messenger-extensions'
       }),
       buttons: [
-        cp.button.url('Report Issue', 'https://github.com/ALiangLiang/messenger-bot-components/issues'),
-        cp.button.postback('Start Chatting', 'DEVELOPER_DEFINED_PAYLOAD')
+        new ButtonUrl('Report Issue', 'https://github.com/ALiangLiang/messenger-bot-components/issues'),
+        new ButtonPostback('Start Chatting', 'DEVELOPER_DEFINED_PAYLOAD')
       ]
     })
-  ]).toJSON() // Will validate and structure message.
+  ]).toJSON()
 }
 ```
 
 ## Feature
 
-#### Friendly codes
+### Friendly codes
 
 Sometimes you are tired of complicated codes looks like
-##### original codes
+
+#### original codes
+
 ```js
 const body = {
   recipient: {
@@ -73,42 +79,34 @@ const body = {
   }
 }
 ```
+
 OMG!! It's sooooooo ugly. But now, you can write it in another way.
-##### use this module
+
+#### use this module
+
 ```js
-const Components = require('messenger-bot-components');
-const cp = Components();
+import { TemplateGeneric, ButtonUrl, ButtonPostback } from 'messenger-bot-components'
 
 const body = {
   recipient: {
     id: 'USER_ID'
   },
-  message: cp.template.generic([
-    cp.templateElement.generic('Welcome to Peter\'s Hats', {
+  message: new TemplateGeneric([
+    TemplateGeneric.Element('Welcome to Peter\'s Hats', {
       imageUrl: 'https://petersfancybrownhats.com/company_image.png',
       subtitle: 'We\'ve got the right hat for everyone.',
-      defaultAction: cp.button.url('View Website', 'https://peterssendreceiveapp.ngrok.io/view?item=103', {
-        messenger_extensions: true,
-        webview_height_ratio: 'tall',
-        fallback_url: 'https://peterssendreceiveapp.ngrok.io/'
+      defaultAction: new TemplateGeneric.Element.DefaultAction('https://webview', {
+        webviewHeightRatio: TemplateGeneric.Element.DefaultAction.WebviewHeightRatio.COMPACT,
+        messengerExtensions: true,
+        fallbackUrl: 'https://website-not-support-messenger-extensions'
       }),
       buttons: [
-        cp.button.url('View Website', 'https://petersfancybrownhats.com'),
-        cp.button.postback('Start Chatting', 'DEVELOPER_DEFINED_PAYLOAD')
+        new ButtonUrl('View Website', 'https://petersfancybrownhats.com'),
+        new ButtonPostback('Start Chatting', 'DEVELOPER_DEFINED_PAYLOAD')
       ]
     })
   ]).toJSON()
 }
-```
-
-#### Validate structure
-
-```js
-cp.text('x'.repeat(630));
-// correct.
-
-cp.text('x'.repeat(9487));
-// error. Longer than 640.
 ```
 
 ## Usage
@@ -116,14 +114,13 @@ cp.text('x'.repeat(9487));
 `npm install messenger-bot-components --save`
 
 ```js
-const Components = require('messenger-bot-components');
-const cp = Components();
+import { Text } from 'messenger-bot-components'
 
 const body = {
   recipient: {
     id: 'USER_ID'
   },
-  message: cp.text('some words').toJSON()
+  message: new Text('some words').toJSON()
 };
 // And then you can pass this body to user.
 ```
@@ -132,16 +129,17 @@ const body = {
 
 All components follow a rule. The required parameters are all placed in foward arguments. Other optional parameters setting in last argument.  
 For example:
+
 ```js
 // The first two arguments are required.
 // Last argument with object is used to setting optional parameters.
-cp.button.url(
+new ButtonUrl(
   'View Website', /* required */
   'https://peterssendreceiveapp.ngrok.io/view?item=103', /* required */ 
   {
-    messenger_extensions: true,  /* optional */
-    webview_height_ratio: 'tall', /* optional */
-    fallback_url: 'https://peterssendreceiveapp.ngrok.io/' /* optional */
+    messengerExtensions: true,  /* optional */
+    webviewHeightRatio: 'tall', /* optional */
+    fallbackUrl: 'https://peterssendreceiveapp.ngrok.io/' /* optional */
   }
 );
 ```
@@ -153,9 +151,8 @@ Messenger Platform API is still on dev. So we need update the module usually. If
 ## TODO
 
 - [ ] test script
+- [ ] more validate rule on components structure
 - [ ] update more components
-- [ ] fill jsapi
-- [ ] auto fix structure. ex: split too long text message.
 - [ ] a cute logo
 - [ ] perfect english README
 
