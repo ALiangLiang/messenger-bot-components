@@ -13,14 +13,20 @@
     "sdk",
     "kit"
   ],
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
   "scripts": {
-    "build": "rm -rf dist/ && tsc",
+    "build": "tsc --project .",
     "test-unit": "mocha -r ts-node/register test/integration/unit/**.test.ts",
     "test-e2e": "mocha -r ts-node/register test/integration/e2e/**.test.ts",
     "test": "mocha -r ts-node/register test/integration/**/*.test.ts",
     "docs": "rm -rf public/ && typedoc --out public ./src/"
   },
-  "dependencies": {},
+  "dependencies": {
+    "typescript": "^3.4.3"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ALiangLiang/messenger-bot-components.git"
@@ -29,7 +35,7 @@
     "url": "https://github.com/ALiangLiang/messenger-bot-components/issues"
   },
   "homepage": "https://github.com/ALiangLiang/messenger-bot-components",
-  "author": "ALiangLiang",
+  "author": "ALiangLiang <me@aliangliang.top>",
   "license": "MIT",
   "devDependencies": {
     "@types/chai": "^4.1.7",
@@ -51,7 +57,6 @@
     "ngrok": "^3.1.1",
     "request": "^2.88.0",
     "request-promise-native": "^1.0.7",
-    "ts-node": "^8.0.3",
-    "typescript": "^3.4.3"
+    "ts-node": "^8.0.3"
   }
 }
