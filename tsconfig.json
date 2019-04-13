@@ -2,14 +2,12 @@
   "compilerOptions": {
     "target": "es2017",
     "module": "commonjs",
-    "allowJs": true,
-    "checkJs": true,
     "outDir": "./dist",
-    "sourceMap": true,
     "strict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
     "esModuleInterop": true,
+    "declaration": true,
     "baseUrl": ".",
     "paths": {
       "*": [

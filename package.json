@@ -2,7 +2,8 @@
   "name": "messenger-bot-components",
   "version": "0.2.0",
   "description": "Component kit of Messenger platform.",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "keywords": [
     "messenger",
     "messenger-bot",
@@ -13,7 +14,7 @@
     "kit"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "rm -rf dist/ && tsc",
     "test-unit": "mocha -r ts-node/register test/integration/unit/**.test.ts",
     "test-e2e": "mocha -r ts-node/register test/integration/e2e/**.test.ts",
     "test": "mocha -r ts-node/register test/integration/**/*.test.ts",
