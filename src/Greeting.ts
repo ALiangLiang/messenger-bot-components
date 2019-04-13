@@ -16,4 +16,12 @@ export class Greeting extends Abstract {
 
     super(constructure)
   }
+
+  static get Item () {
+    return GreetingItem
+  }
+
+  get Item () {
+    return GreetingItem
+  }
 }
