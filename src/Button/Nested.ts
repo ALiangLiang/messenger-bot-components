@@ -6,7 +6,7 @@ import { ButtonAccountLink } from './AccountLink'
 import { ButtonAccountUnlink } from './AccountUnlink'
 
 export class ButtonNested extends Abstract {
-  constructor (title: String, callToActions: ButtonUrl[] | ButtonPostback[] | ButtonAccountLink[] | ButtonAccountUnlink[]) {
+  constructor (title: String, callToActions: ButtonUrl[] | ButtonPostback[] | ButtonAccountLink[] | ButtonAccountUnlink[] | ButtonNested[]) {
     const constructure = {
       type: 'nested',
       title: title,
