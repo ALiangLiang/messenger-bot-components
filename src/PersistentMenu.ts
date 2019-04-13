@@ -26,4 +26,12 @@ export class PersistentMenu extends Abstract {
 
     super(constructure)
   }
+
+  static get Locale () {
+    return PersistentMenuLocale
+  }
+
+  get Locale () {
+    return PersistentMenuLocale
+  }
 }
