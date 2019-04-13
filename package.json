@@ -20,9 +20,7 @@
     "test": "mocha -r ts-node/register test/integration/**/*.test.ts",
     "docs": "rm -rf public/ && typedoc --out public ./src/"
   },
-  "dependencies": {
-    "joi": "^10.6.0"
-  },
+  "dependencies": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/ALiangLiang/messenger-bot-components.git"
