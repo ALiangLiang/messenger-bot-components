@@ -4,7 +4,7 @@
 
 ![npm type definitions](https://img.shields.io/npm/types/typescript.svg)
 
-Component kit of Messenger platform. Friendly for developers and help you validate structure of bot message.
+Component kit of Messenger platform. Friendly for developers and help you validate structure of bot message. This project is write by TypeScript, so you can use it with [**Snippets**](https://code.visualstudio.com/docs/languages/typescript#_snippets).
 
 ## Example
 
@@ -27,8 +27,11 @@ const body = {
         new ButtonPostback('Start Chatting', 'DEVELOPER_DEFINED_PAYLOAD')
       ]
     })
-  ]).toJSON()
+  ])
 }
+
+// Directly send to Messenger and client.
+SendToMessenger(body)
 ```
 
 ## Feature
@@ -120,7 +123,7 @@ const body = {
   recipient: {
     id: 'USER_ID'
   },
-  message: new Text('some words').toJSON()
+  message: new Text('some words')
 };
 // And then you can pass this body to user.
 ```
@@ -155,10 +158,6 @@ Messenger Platform API is still on dev. So we need update the module usually. If
 - [ ] update more components
 - [ ] a cute logo
 - [ ] perfect english README
-
-## Conduct rule
-
-- tab size: 2 spaces
 
 ## License
 
