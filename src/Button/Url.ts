@@ -13,7 +13,7 @@ export interface ButtonUrlOption {
 }
 
 export class ButtonUrl extends Abstract {
-  constructor (title: String | null, url: String, option: ButtonUrlOption) {
+  constructor (title: String | null, url: String, option: ButtonUrlOption = {}) {
     const constructure = {
       type: 'web_url',
       title: title,
