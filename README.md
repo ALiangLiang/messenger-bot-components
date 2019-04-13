@@ -158,6 +158,7 @@ Messenger Platform API is still on dev. So we need update the module usually. If
 - [ ] update more components
 - [ ] a cute logo
 - [ ] perfect english README
+- [ ] schedule ci
 
 ## License
 
