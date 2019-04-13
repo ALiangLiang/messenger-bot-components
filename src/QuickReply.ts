@@ -1,5 +1,12 @@
 import { Abstract } from './Abstract'
 
+export enum ContentType {
+  TEXT = 'text',
+  LOCATION = 'location',
+  USER_PHONE_NUMBER = 'user_phone_number',
+  USER_EMAIL = 'user_email'
+}
+
 interface QuickReplyItemOption {
   title?: String
   payload?: String
@@ -7,7 +14,7 @@ interface QuickReplyItemOption {
 }
 
 export class QuickReplyItem extends Abstract {
-  constructor (contentType: String, option: QuickReplyItemOption = {}) {
+  constructor (contentType: ContentType | 'text' | 'location' | 'user_phone_number' | 'user_email', option: QuickReplyItemOption = {}) {
     const constructure = {
       title: option.title,
       content_type: contentType,
@@ -16,6 +23,14 @@ export class QuickReplyItem extends Abstract {
     }
 
     super(constructure)
+  }
+
+  static get ContentType () {
+    return ContentType
+  }
+
+  get ContentType () {
+    return ContentType
   }
 }
 
@@ -27,5 +42,13 @@ export class QuickReply extends Abstract {
     }
 
     super(constructure)
+  }
+
+  static get Item () {
+    return QuickReplyItem
+  }
+
+  get Item () {
+    return QuickReplyItem
   }
 }
