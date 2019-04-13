@@ -4,7 +4,7 @@ import { TemplateGeneric } from '../../../src'
 
 describe('TemplateGeneric', function () {
   it('should work', function () {
-    let json = (new TemplateGeneric([
+    const json = new TemplateGeneric([
       new TemplateGeneric.Element('foo', {
         imageUrl: 'https://dummyimage.com/600x400/000/fff',
         subtitle: 'asd',
@@ -14,7 +14,7 @@ describe('TemplateGeneric', function () {
           fallbackUrl: 'https://website-not-support-messenger-extensions.com'
         })
       })
-    ]))
+    ])
 
     return send(json)
   })

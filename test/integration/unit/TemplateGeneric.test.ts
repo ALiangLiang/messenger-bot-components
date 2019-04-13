@@ -4,9 +4,9 @@ import { TemplateGeneric } from '../../../src'
 
 describe('TemplateGeneric', function () {
   it('should work', function () {
-    let json = (new TemplateGeneric([
+    const json = (new TemplateGeneric([
       new TemplateGeneric.Element('foo', {
-        imageUrl: 'https://bar.com/abc.jpg',
+        imageUrl: 'https://dummyimage.com/600x400/000/fff',
         subtitle: 'asd',
         defaultAction: new TemplateGeneric.Element.DefaultAction('https://webview.com', {
           webviewHeightRatio: TemplateGeneric.Element.DefaultAction.WebviewHeightRatio.COMPACT,
@@ -31,7 +31,7 @@ describe('TemplateGeneric', function () {
               fallback_url: 'https://website-not-support-messenger-extensions.com'
             },
             title: 'foo',
-            image_url: 'https://bar.com/abc.jpg',
+            image_url: 'https://dummyimage.com/600x400/000/fff',
             subtitle: 'asd'
           }]
         }

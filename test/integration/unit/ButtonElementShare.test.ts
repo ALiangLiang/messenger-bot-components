@@ -4,9 +4,11 @@ import { ButtonElementShare, TemplateGeneric } from '../../../src'
 
 describe('ButtonElementShare', function () {
   it('should work', function () {
-    let json = (new ButtonElementShare({
+    const json = (new ButtonElementShare({
       shareContents: new TemplateGeneric([
-        new TemplateGeneric.Element('Shared template')
+        new TemplateGeneric.Element('Shared template', {
+          subtitle: 'Shared template title'
+        })
       ])
     })).toJSON()
 
@@ -18,7 +20,8 @@ describe('ButtonElementShare', function () {
           payload: {
             template_type: 'generic',
             elements: [{
-              title: 'Shared template'
+              title: 'Shared template',
+              subtitle: 'Shared template title'
             }]
           }
         }

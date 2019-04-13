@@ -4,7 +4,7 @@ import { TemplateButton, ButtonUrl, ButtonPostback } from '../../../src'
 
 describe('TemplateGeneric', function () {
   it('should work', function () {
-    let json = (new TemplateButton('foo', [
+    const json = (new TemplateButton('foo', [
       new ButtonUrl('bar', 'https://test.top'),
       new ButtonPostback('bar', 'PAYLOAD')
     ])).toJSON()
