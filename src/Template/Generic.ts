@@ -26,7 +26,7 @@ interface TemplateElementGenericOption {
 }
 
 export class TemplateElementGeneric extends Abstract {
-  constructor (title: String, option: TemplateElementGenericOption) {
+  constructor (title: String, option: TemplateElementGenericOption = {}) {
     const constructure = {
       title: title,
       image_url: option.imageUrl,
