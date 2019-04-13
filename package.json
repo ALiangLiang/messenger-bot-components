@@ -1,6 +1,6 @@
 {
   "name": "messenger-bot-components",
-  "version": "0.2.0-beta.2",
+  "version": "0.2.0-beta.3",
   "description": "Component kit of Messenger platform.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -22,7 +22,8 @@
     "test-unit": "mocha -r ts-node/register test/integration/unit/**.test.ts",
     "test-e2e": "mocha -r ts-node/register test/integration/e2e/**.test.ts",
     "test": "mocha -r ts-node/register test/integration/**/*.test.ts",
-    "docs": "rm -rf public/ && typedoc --out public ./src/"
+    "docs": "rm -rf public/ && typedoc --out public ./src/",
+    "release": "npm run build && npm publish ."
   },
   "dependencies": {
     "typescript": "^3.4.3"
