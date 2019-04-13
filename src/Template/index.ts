@@ -1,11 +1,4 @@
-import TemplateButton from './Button'
-import TemplateGeneric from './Generic'
-import TemplateList from './List'
-import TemplateReceipt from './Receipt'
-
-export {
-  TemplateButton,
-  TemplateGeneric,
-  TemplateList,
-  TemplateReceipt
-}
+export { TemplateButton } from './Button'
+export { TemplateGeneric } from './Generic'
+export { TemplateList } from './List'
+export { TemplateReceipt } from './Receipt'

@@ -1,4 +1,4 @@
-import Abstract from './Abstract'
+import { Abstract } from './Abstract'
 
 export class GreetingItem extends Abstract {
   constructor (text: String, locale: String) {
@@ -8,7 +8,7 @@ export class GreetingItem extends Abstract {
   }
 }
 
-export default class Greeting extends Abstract {
+export class Greeting extends Abstract {
   constructor (greetingItems: GreetingItem[]) {
     const constructure = {
       greeting: greetingItems

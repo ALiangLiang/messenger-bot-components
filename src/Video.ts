@@ -1,6 +1,6 @@
-import Abstract from './Abstract'
+import { Abstract } from './Abstract'
 
-export default class Video extends Abstract {
+export class Video extends Abstract {
   constructor (url: String) {
     const constructure = {
       attachment: {

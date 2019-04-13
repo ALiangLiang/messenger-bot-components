@@ -1,6 +1,6 @@
-import Abstract from '../Abstract'
+import { Abstract } from '../Abstract'
 
-export default class ButtonAccountLink extends Abstract {
+export class ButtonAccountLink extends Abstract {
   constructor (url: String) {
     const constructure = {
       type: 'account_link',

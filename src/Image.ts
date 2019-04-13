@@ -1,10 +1,10 @@
-import Abstract from './Abstract'
+import { Abstract } from './Abstract'
 
-export interface ImageOption {
+interface ImageOption {
   isReusable?: Boolean
 }
 
-export default class Image extends Abstract {
+export class Image extends Abstract {
   constructor (urlOrAttachmentId: Number | String, option: ImageOption = {}) {
     const url = (!Number(urlOrAttachmentId)) ? urlOrAttachmentId : void 0
     const attachmentId = (Number(urlOrAttachmentId)) ? urlOrAttachmentId : void 0

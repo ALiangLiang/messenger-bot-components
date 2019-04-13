@@ -1,11 +1,11 @@
-import Abstract from '../Abstract'
+import { Abstract } from '../Abstract'
 
-import ButtonUrl from '../Button/Url'
-import ButtonPostback from '../Button/Postback'
-import ButtonPhoneNumber from '../Button/PhoneNumber'
-import ButtonElementShare from '../Button/ElementShare'
-import ButtonAccountLink from '../Button/AccountLink'
-import ButtonAccountUnlink from '../Button/AccountUnlink'
+import { ButtonUrl } from '../Button/Url'
+import { ButtonPostback } from '../Button/Postback'
+import { ButtonPhoneNumber } from '../Button/PhoneNumber'
+import { ButtonElementShare } from '../Button/ElementShare'
+import { ButtonAccountLink } from '../Button/AccountLink'
+import { ButtonAccountUnlink } from '../Button/AccountUnlink'
 
 interface TemplateElementListOption {
   imageUrl?: String
@@ -38,7 +38,7 @@ interface TemplateListOption {
   buttons?: ButtonUrl[] | ButtonPostback[] | ButtonPhoneNumber[] | ButtonElementShare[] | ButtonAccountLink[] | ButtonAccountUnlink[]
 }
 
-export default class TemplateList extends Abstract {
+export class TemplateList extends Abstract {
   constructor (elements: TemplateElementList[], option: TemplateListOption = {}) {
     const
       constructure = {

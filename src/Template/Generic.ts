@@ -1,11 +1,11 @@
-import Abstract from '../Abstract'
+import { Abstract } from '../Abstract'
 
-import ButtonUrl from '../Button/Url'
-import ButtonPostback from '../Button/Postback'
-import ButtonPhoneNumber from '../Button/PhoneNumber'
-import ButtonElementShare from '../Button/ElementShare'
-import ButtonAccountLink from '../Button/AccountLink'
-import ButtonAccountUnlink from '../Button/AccountUnlink'
+import { ButtonUrl } from '../Button/Url'
+import { ButtonPostback } from '../Button/Postback'
+import { ButtonPhoneNumber } from '../Button/PhoneNumber'
+import { ButtonElementShare } from '../Button/ElementShare'
+import { ButtonAccountLink } from '../Button/AccountLink'
+import { ButtonAccountUnlink } from '../Button/AccountUnlink'
 
 interface TemplateElementGenericOption {
   imageUrl?: String
@@ -28,7 +28,7 @@ export class TemplateElementGeneric extends Abstract {
   }
 }
 
-export default class TemplateGeneric extends Abstract {
+export class TemplateGeneric extends Abstract {
   constructor (elements: TemplateElementGeneric[]) {
     const constructure = {
       attachment: {

@@ -1,6 +1,6 @@
-import Abstract from './Abstract'
+import { Abstract } from './Abstract'
 
-export interface QuickReplyItemOption {
+interface QuickReplyItemOption {
   title?: String
   payload?: String
   imageUrl?: String
@@ -19,7 +19,7 @@ export class QuickReplyItem extends Abstract {
   }
 }
 
-export default class QuickReply extends Abstract {
+export class QuickReply extends Abstract {
   constructor (text: String, quickReplies: QuickReplyItem[]) {
     const constructure = {
       text,

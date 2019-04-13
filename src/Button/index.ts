@@ -1,17 +1,7 @@
-import ButtonAccountLink from './AccountLink'
-import ButtonAccountUnlink from './AccountUnlink'
-import ButtonElementShare from './ElementShare'
-import ButtonNested from './Nested'
-import ButtonPhoneNumber from './PhoneNumber'
-import ButtonPostback from './Postback'
-import ButtonUrl from './Url'
-
-export {
-  ButtonAccountLink,
-  ButtonAccountUnlink,
-  ButtonElementShare,
-  ButtonNested,
-  ButtonPhoneNumber,
-  ButtonPostback,
-  ButtonUrl
-}
+export { ButtonAccountLink } from './AccountLink'
+export { ButtonAccountUnlink } from './AccountUnlink'
+export { ButtonElementShare } from './ElementShare'
+export { ButtonNested } from './Nested'
+export { ButtonPhoneNumber } from './PhoneNumber'
+export { ButtonPostback } from './Postback'
+export { ButtonUrl } from './Url'

@@ -1,8 +1,8 @@
-import Abstract from './Abstract'
+import { Abstract } from './Abstract'
 
-import ButtonUrl from './Button/Url'
-import ButtonPostback from './Button/Postback'
-import ButtonNested from './Button/Nested'
+import { ButtonUrl } from './Button/Url'
+import { ButtonPostback } from './Button/Postback'
+import { ButtonNested } from './Button/Nested'
 
 interface PersistentMenuLocaleOption {
   composerInputDisabled?: Boolean
@@ -20,7 +20,7 @@ export class PersistentMenuLocale extends Abstract {
   }
 }
 
-export default class PersistentMenu extends Abstract {
+export class PersistentMenu extends Abstract {
   constructor (persistentMenuLocales: PersistentMenuLocale[]) {
     const constructure = { persistent_menu: persistentMenuLocales }
 

@@ -13,7 +13,7 @@ function jsonReplacer (key: any, value: any) {
   return value
 }
 
-export default class Abstract {
+export class Abstract {
   private _object: Object
 
   constructor (object = {}) {

@@ -1,4 +1,4 @@
-import Abstract from '../Abstract'
+import { Abstract } from '../Abstract'
 
 interface ButtonUrlOption {
   webviewHeightRatio?: String
@@ -6,7 +6,7 @@ interface ButtonUrlOption {
   fallbackUrl?: String
 }
 
-export default class ButtonUrl extends Abstract {
+export class ButtonUrl extends Abstract {
   constructor (title: String, url: String, option: ButtonUrlOption) {
     const constructure = {
       type: 'web_url',

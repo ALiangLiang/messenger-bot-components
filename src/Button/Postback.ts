@@ -1,6 +1,6 @@
-import Abstract from '../Abstract'
+import { Abstract } from '../Abstract'
 
-export default class ButtonPostback extends Abstract {
+export class ButtonPostback extends Abstract {
   constructor (title: string, payload: string) {
     const constructure = {
       type: 'postback',

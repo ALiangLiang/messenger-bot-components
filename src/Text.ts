@@ -1,6 +1,6 @@
-import Abstract from './Abstract'
+import { Abstract } from './Abstract'
 
-export default class Text extends Abstract {
+export class Text extends Abstract {
   constructor (text: String) {
     const constructure = { text }
 

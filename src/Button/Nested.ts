@@ -1,11 +1,11 @@
-import Abstract from '../Abstract'
+import { Abstract } from '../Abstract'
 
-import ButtonUrl from './Url'
-import ButtonPostback from './Postback'
-import ButtonAccountLink from './AccountLink'
-import ButtonAccountUnlink from './AccountUnlink'
+import { ButtonUrl } from './Url'
+import { ButtonPostback } from './Postback'
+import { ButtonAccountLink } from './AccountLink'
+import { ButtonAccountUnlink } from './AccountUnlink'
 
-export default class ButtonNested extends Abstract {
+export class ButtonNested extends Abstract {
   constructor (title: String, callToActions: ButtonUrl[] | ButtonPostback[] | ButtonAccountLink[] | ButtonAccountUnlink[]) {
     const constructure = {
       type: 'nested',

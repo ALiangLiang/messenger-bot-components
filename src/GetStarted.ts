@@ -1,6 +1,6 @@
-import Abstract from './Abstract'
+import { Abstract } from './Abstract'
 
-export default class GetStarted extends Abstract {
+export class GetStarted extends Abstract {
   constructor (payload: String) {
     const
       constructure = {

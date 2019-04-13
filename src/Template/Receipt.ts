@@ -1,4 +1,4 @@
-import Abstract from '../Abstract'
+import { Abstract } from '../Abstract'
 
 interface Price {
   label?: String
@@ -56,7 +56,7 @@ interface TemplateReceiptOption {
   adjustments?: Adjustments[]
 }
 
-export default class TemplateReceipt extends Abstract {
+export class TemplateReceipt extends Abstract {
   constructor (
     recipientName: String,
     orderNumber: String,
