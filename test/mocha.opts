@@ -1,3 +1,2 @@
-test/integration/**.ts
 --reporter spec
 --recursive

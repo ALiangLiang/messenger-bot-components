@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import { ButtonElementShare, TemplateGeneric } from '../../src'
+import { ButtonElementShare, TemplateGeneric } from '../../../src'
 
 describe('ButtonElementShare', function () {
   it('should work', function () {

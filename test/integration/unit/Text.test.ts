@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import { Text } from '../../src'
+import { Text } from '../../../src'
 
 describe('Text', function () {
   it('should work', function () {

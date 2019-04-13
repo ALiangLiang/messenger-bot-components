@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import { TemplateGeneric } from '../../src'
+import { TemplateGeneric } from '../../../src'
 
 describe('TemplateGeneric', function () {
   it('should work', function () {
@@ -8,10 +8,10 @@ describe('TemplateGeneric', function () {
       new TemplateGeneric.Element('foo', {
         imageUrl: 'https://bar.com/abc.jpg',
         subtitle: 'asd',
-        defaultAction: new TemplateGeneric.Element.DefaultAction('https://webview', {
+        defaultAction: new TemplateGeneric.Element.DefaultAction('https://webview.com', {
           webviewHeightRatio: TemplateGeneric.Element.DefaultAction.WebviewHeightRatio.COMPACT,
           messengerExtensions: true,
-          fallbackUrl: 'https://website-not-support-messenger-extensions'
+          fallbackUrl: 'https://website-not-support-messenger-extensions.com'
         })
       })
     ])).toJSON()
@@ -25,10 +25,10 @@ describe('TemplateGeneric', function () {
             default_action: {
               type: 'web_url',
               title: null,
-              url: 'https://webview',
+              url: 'https://webview.com',
               webview_height_ratio: 'compact',
               messenger_extensions: true,
-              fallback_url: 'https://website-not-support-messenger-extensions'
+              fallback_url: 'https://website-not-support-messenger-extensions.com'
             },
             title: 'foo',
             image_url: 'https://bar.com/abc.jpg',

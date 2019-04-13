@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import { TemplateButton, ButtonUrl, ButtonPostback } from '../../src'
+import { TemplateButton, ButtonUrl, ButtonPostback } from '../../../src'
 
 describe('TemplateGeneric', function () {
   it('should work', function () {
