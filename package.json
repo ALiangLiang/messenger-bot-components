@@ -14,11 +14,11 @@
     "kit"
   ],
   "files": [
-    "dist",
-    "LICENSE"
+    "dist"
   ],
   "scripts": {
     "build": "tsc --project .",
+    "lint": "eslint src test",
     "test-unit": "mocha -r ts-node/register test/integration/unit/**.test.ts",
     "test-e2e": "mocha -r ts-node/register test/integration/e2e/**.test.ts",
     "test": "mocha -r ts-node/register test/integration/**/*.test.ts",
@@ -46,9 +46,10 @@
     "@typescript-eslint/parser": "^1.6.0",
     "body-parser": "^1.18.3",
     "chai": "^4.2.0",
-    "eslint": "^5.4.0",
+    "eslint": "^5.16.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-mocha": "^5.3.0",
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-standard": "^4.0.0",
