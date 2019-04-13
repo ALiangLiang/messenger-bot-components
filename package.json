@@ -1,6 +1,6 @@
 {
   "name": "messenger-bot-components",
-  "version": "0.2.0-beta",
+  "version": "0.2.0-beta.1",
   "description": "Component kit of Messenger platform.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
