@@ -5,6 +5,7 @@
 
 ![npm type definitions](https://img.shields.io/npm/types/typescript.svg)
 [![Build Status](https://travis-ci.org/ALiangLiang/messenger-bot-components.svg?branch=master)](https://travis-ci.org/ALiangLiang/messenger-bot-components)
+![GitHub](https://img.shields.io/github/license/ALiangLiang/messenger-bot-components.svg)
 
 Component kit of Messenger platform. Friendly for developers and help you validate
 structure of bot message. This project is write by TypeScript, so you can use it
