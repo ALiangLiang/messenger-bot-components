@@ -4,6 +4,9 @@ interface ImageOption {
   isReusable?: Boolean
 }
 
+/**
+ * @see {@link https://developers.facebook.com/docs/messenger-platform/reference/send-api/#attachment}
+ */
 export class Image extends Abstract {
   constructor (urlOrAttachmentId: Number | String, option: ImageOption = {}) {
     const url = (!Number(urlOrAttachmentId)) ? urlOrAttachmentId : void 0

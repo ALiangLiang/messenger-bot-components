@@ -14,6 +14,9 @@ interface TemplateElementListOption {
   buttons?: ButtonUrl[] | ButtonPostback[] | ButtonPhoneNumber[] | ButtonElementShare[] | ButtonAccountLink[] | ButtonAccountUnlink[]
 }
 
+/**
+ * @see {@link https://developers.facebook.com/docs/messenger-platform/reference/template/list#elements}
+ */
 export class TemplateElementList extends Abstract {
   constructor (title: String, option: TemplateElementListOption) {
     const constructure = {
@@ -38,6 +41,9 @@ interface TemplateListOption {
   buttons?: ButtonUrl[] | ButtonPostback[] | ButtonPhoneNumber[] | ButtonElementShare[] | ButtonAccountLink[] | ButtonAccountUnlink[]
 }
 
+/**
+ * @see {@link https://developers.facebook.com/docs/messenger-platform/reference/template/list}
+ */
 export class TemplateList extends Abstract {
   constructor (elements: TemplateElementList[], option: TemplateListOption = {}) {
     const

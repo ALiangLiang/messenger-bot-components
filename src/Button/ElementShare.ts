@@ -6,6 +6,9 @@ interface ButtonElementShareOption {
   shareContents?: TemplateGeneric
 }
 
+/**
+ * @see {@link https://developers.facebook.com/docs/messenger-platform/reference/buttons/share}
+ */
 export class ButtonElementShare extends Abstract {
   constructor (option: ButtonElementShareOption = {}) {
     const constructure = {

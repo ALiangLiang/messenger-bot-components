@@ -25,6 +25,9 @@ interface TemplateElementGenericOption {
   buttons?: ButtonUrl[] | ButtonPostback[] | ButtonPhoneNumber[] | ButtonElementShare[] | ButtonAccountLink[] | ButtonAccountUnlink[]
 }
 
+/**
+ * @see {@link https://developers.facebook.com/docs/messenger-platform/reference/template/generic#elements}
+ */
 export class TemplateElementGeneric extends Abstract {
   constructor (title: String, option: TemplateElementGenericOption = {}) {
     const constructure = {
@@ -47,6 +50,9 @@ export class TemplateElementGeneric extends Abstract {
   }
 }
 
+/**
+ * @see {@link https://developers.facebook.com/docs/messenger-platform/reference/template/generic}
+ */
 export class TemplateGeneric extends Abstract {
   constructor (elements: TemplateElementGeneric[]) {
     const constructure = {

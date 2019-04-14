@@ -13,6 +13,9 @@ interface QuickReplyItemOption {
   imageUrl?: String
 }
 
+/**
+ * @see {@link https://developers.facebook.com/docs/messenger-platform/reference/send-api/quick-replies/#quick_reply}
+ */
 export class QuickReplyItem extends Abstract {
   constructor (contentType: ContentType | 'text' | 'location' | 'user_phone_number' | 'user_email', option: QuickReplyItemOption = {}) {
     const constructure = {
@@ -34,6 +37,9 @@ export class QuickReplyItem extends Abstract {
   }
 }
 
+/**
+ * @see {@link https://developers.facebook.com/docs/messenger-platform/reference/send-api/quick-replies/}
+ */
 export class QuickReply extends Abstract {
   constructor (text: String, quickReplies: QuickReplyItem[]) {
     const constructure = {

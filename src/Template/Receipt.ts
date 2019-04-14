@@ -27,6 +27,9 @@ export class TemplateElementReceipt extends Abstract {
   }
 }
 
+/**
+ * @see {@link https://developers.facebook.com/docs/messenger-platform/reference/template/receipt#address}
+ */
 interface Address {
   street1: String
   street2?: String
@@ -36,6 +39,9 @@ interface Address {
   country: String
 }
 
+/**
+ * @see {@link https://developers.facebook.com/docs/messenger-platform/reference/template/receipt#summary}
+ */
 interface Summary {
   subtotal?: String
   shippingCost?: Number
@@ -43,6 +49,9 @@ interface Summary {
   totalCost: Number
 }
 
+/**
+ * @see {@link https://developers.facebook.com/docs/messenger-platform/reference/template/receipt#adjustment}
+ */
 interface Adjustments {
   name: String
   amount: Number
@@ -56,6 +65,9 @@ interface TemplateReceiptOption {
   adjustments?: Adjustments[]
 }
 
+/**
+ * @see {@link https://developers.facebook.com/docs/messenger-platform/reference/template/receipt}
+ */
 export class TemplateReceipt extends Abstract {
   constructor (
     recipientName: String,

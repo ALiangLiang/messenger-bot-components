@@ -12,6 +12,9 @@ export interface ButtonUrlOption {
   fallbackUrl?: String
 }
 
+/**
+ * @see {@link https://developers.facebook.com/docs/messenger-platform/reference/buttons/url}
+ */
 export class ButtonUrl extends Abstract {
   constructor (title: String | null, url: String, option: ButtonUrlOption = {}) {
     const constructure = {

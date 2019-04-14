@@ -8,6 +8,9 @@ interface PersistentMenuLocaleOption {
   composerInputDisabled?: Boolean
 }
 
+/**
+ * @see {@link https://developers.facebook.com/docs/messenger-platform/reference/messenger-profile-api/persistent-menu#properties}
+ */
 export class PersistentMenuLocale extends Abstract {
   constructor (locale: String, callToActions: ButtonUrl[] | ButtonPostback[] | ButtonNested[], option: PersistentMenuLocaleOption = {}) {
     const constructure = {
@@ -20,6 +23,9 @@ export class PersistentMenuLocale extends Abstract {
   }
 }
 
+/**
+ * @see {@link https://developers.facebook.com/docs/messenger-platform/reference/messenger-profile-api/persistent-menu}
+ */
 export class PersistentMenu extends Abstract {
   constructor (persistentMenuLocales: PersistentMenuLocale[]) {
     const constructure = { persistent_menu: persistentMenuLocales }
