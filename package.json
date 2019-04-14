@@ -19,6 +19,7 @@
   "scripts": {
     "build": "tsc --project .",
     "lint": "eslint src test --ext .ts,.js",
+    "lint-docs": "markdownlint *.md",
     "test-unit": "mocha -r ts-node/register test/integration/unit/**.test.ts",
     "test-e2e": "mocha -r ts-node/register test/integration/e2e/**.test.ts",
     "test": "mocha -r ts-node/register test/integration/**/*.test.ts",
@@ -55,6 +56,7 @@
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-standard": "^4.0.0",
     "express": "^4.16.4",
+    "markdownlint-cli": "^0.15.0",
     "mocha": "^6.1.3",
     "ngrok": "^3.1.1",
     "request": "^2.88.0",
