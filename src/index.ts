@@ -7,6 +7,7 @@ export { Text } from './Text'
 export { Image } from './Image'
 export { QuickReply } from './QuickReply'
 export { Video } from './Video'
+export { Audio } from './Audio'
 
 export {
   ButtonAccountLink,
