@@ -24,7 +24,7 @@
     "test-unit": "mocha test/integration/unit/**.test.ts",
     "test-e2e": "mocha test/integration/e2e/**.test.ts",
     "cover": "nyc npm run test",
-    "docs": "rm -rf docs/ && typedoc --out docs ./src/",
+    "docs": "rm -rf docs/ && typedoc --name \"Messenger Bot Components\" --out docs ./src/",
     "release": "npm run build && npm publish ."
   },
   "nyc": {
