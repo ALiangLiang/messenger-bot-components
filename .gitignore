@@ -14,5 +14,4 @@ package-lock.json
 *.njsproj
 *.sln
 
-public/
 test/config.js

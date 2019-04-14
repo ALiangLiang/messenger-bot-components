@@ -23,7 +23,7 @@
     "test-unit": "mocha -r ts-node/register test/integration/unit/**.test.ts",
     "test-e2e": "mocha -r ts-node/register test/integration/e2e/**.test.ts",
     "test": "mocha -r ts-node/register test/integration/**/*.test.ts",
-    "docs": "rm -rf public/ && typedoc --out public ./src/",
+    "docs": "rm -rf docs/ && typedoc --out docs ./src/",
     "release": "npm run build && npm publish ."
   },
   "dependencies": {
