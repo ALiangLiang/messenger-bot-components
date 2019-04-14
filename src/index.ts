@@ -23,5 +23,6 @@ export {
   TemplateButton,
   TemplateGeneric,
   TemplateList,
-  TemplateReceipt
+  TemplateReceipt,
+  TemplateMedia
 } from './Template/'
