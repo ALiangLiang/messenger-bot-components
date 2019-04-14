@@ -10,7 +10,7 @@ import { ButtonAccountUnlink } from '../Button/AccountUnlink'
 interface TemplateElementListOption {
   imageUrl?: String
   subtitle?: String
-  defaultAction?: String
+  defaultAction?: ButtonUrl
   buttons?: ButtonUrl[] | ButtonPostback[] | ButtonPhoneNumber[] | ButtonElementShare[] | ButtonAccountLink[] | ButtonAccountUnlink[]
 }
 
