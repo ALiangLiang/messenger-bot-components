@@ -1,10 +1,5 @@
 import { Abstract } from '../Abstract'
 
-interface Price {
-  label?: String
-  amount?: Number
-}
-
 interface TemplateElementReceiptOption {
   subtitle?: String
   quantity?: Number
@@ -12,8 +7,11 @@ interface TemplateElementReceiptOption {
   imageUrl?: String
 }
 
+/**
+ * @see {@link https://developers.facebook.com/docs/messenger-platform/reference/template/receipt#elements}
+ */
 export class TemplateElementReceipt extends Abstract {
-  constructor (title: String, price: Price, option: TemplateElementReceiptOption) {
+  constructor (title: String, price: Number, option: TemplateElementReceiptOption) {
     const constructure = {
       title,
       price,
