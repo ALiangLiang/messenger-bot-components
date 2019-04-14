@@ -10,18 +10,10 @@ export class Abstract {
   }
 
   toJSON () {
-    try {
-      return JSON.parse(JSON.stringify(this._object))
-    } catch (err) {
-      console.error(err)
-    }
+    return JSON.parse(JSON.stringify(this._object))
   }
 
   toString () {
-    try {
-      return JSON.stringify(this._object)
-    } catch (err) {
-      console.error(err)
-    }
+    return JSON.stringify(this._object)
   }
 }
