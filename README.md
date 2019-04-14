@@ -3,8 +3,10 @@
   Messenger Bot Components
 </h1>
 
-![npm type definitions](https://img.shields.io/npm/types/typescript.svg)
+![npm](https://img.shields.io/npm/v/messenger-bot-components.svg)
 [![Build Status](https://travis-ci.org/ALiangLiang/messenger-bot-components.svg?branch=master)](https://travis-ci.org/ALiangLiang/messenger-bot-components)
+[![Coverage Status](https://coveralls.io/repos/github/ALiangLiang/messenger-bot-components/badge.svg?branch=master)](https://coveralls.io/github/ALiangLiang/messenger-bot-components?branch=master)
+![npm type definitions](https://img.shields.io/npm/types/typescript.svg)
 ![GitHub](https://img.shields.io/github/license/ALiangLiang/messenger-bot-components.svg)
 
 Component kit of Messenger platform. Friendly for developers and help you validate
