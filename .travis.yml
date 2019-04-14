@@ -18,8 +18,9 @@ jobs:
     - stage: test
       node_js: '8'
       script:
-        - npm run test-unit
-        - npm run test-e2e
+        - npm run cover
+      after_success:
+        - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 
 stages:
   - lint

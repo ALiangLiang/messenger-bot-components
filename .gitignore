@@ -14,4 +14,7 @@ package-lock.json
 *.njsproj
 *.sln
 
+.nyc_output/
+coverage/
+
 test/config.js
