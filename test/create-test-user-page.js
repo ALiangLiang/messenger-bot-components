@@ -72,7 +72,7 @@ async function main () {
 
   console.log('Set whitelist domain')
 
-  const psid = await new Promise((resolve, reject) => {
+  const psid = await new Promise(async (resolve, reject) => {
     // Establish http server
     const app = express()
     app.use(bodyParser.json())
