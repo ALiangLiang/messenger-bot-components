@@ -2,21 +2,6 @@
  * @module Abstract
  */
 
-function serializer (object: Object) {
-  try {
-    return JSON.parse(JSON.stringify(object, jsonReplacer))
-  } catch (err) {
-    console.error(err)
-  }
-}
-
-function jsonReplacer (key: any, value: any) {
-  if (value && value.constructure) {
-    return value.constructure
-  }
-  return value
-}
-
 export class Abstract {
   private _object: Object
 
@@ -25,6 +10,18 @@ export class Abstract {
   }
 
   toJSON () {
-    return serializer(this._object)
+    try {
+      return JSON.parse(JSON.stringify(this._object))
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  toString () {
+    try {
+      return JSON.stringify(this._object)
+    } catch (err) {
+      console.error(err)
+    }
   }
 }
