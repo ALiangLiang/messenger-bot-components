@@ -32,13 +32,14 @@ export class TemplateElementList extends Abstract {
 }
 
 const enum TopElementStyle {
-  compact = 'compact',
-  large = 'large',
+  COMPACT = 'compact',
+  LARGE = 'large',
 }
 
 interface TemplateListOption {
-  topElementStyle?: TopElementStyle
-  buttons?: ButtonUrl[] | ButtonPostback[] | ButtonPhoneNumber[] | ButtonElementShare[] | ButtonAccountLink[] | ButtonAccountUnlink[]
+  topElementStyle?: TopElementStyle | 'compact' | 'large'
+  buttons?: ButtonUrl[] | ButtonPostback[] | ButtonPhoneNumber[] | ButtonElementShare[] | ButtonAccountLink[] | ButtonAccountUnlink[],
+  sharable?: Boolean
 }
 
 /**
@@ -54,7 +55,8 @@ export class TemplateList extends Abstract {
             template_type: 'list',
             top_element_style: option.topElementStyle,
             buttons: option.buttons,
-            elements: elements
+            elements: elements,
+            sharable: option.sharable
           }
         }
       }
