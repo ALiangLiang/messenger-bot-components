@@ -1,4 +1,4 @@
-module.exports = {
+const CONFIG = {
   // These variables is used to run create-test-user-page.js. If you already have access token and psid.
   // You can ignore and directly fill them.
   VERIFY_TOKEN: 'YOU_CAN_SPECIFY_ANY_TOKEN',
@@ -10,3 +10,9 @@ module.exports = {
   ACCESS_TOKEN: '',
   PSID: ''
 }
+
+// Cover the process.env by CONFIG. But process.env first
+Object.assign(CONFIG, process.env)
+Object.assign(process.env, CONFIG)
+
+module.exports = process.env
