@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>messenger-bot-components</title>
+	<title>Messenger Bot Components</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">messenger-bot-components</a>
+					<a href="index.html" class="title">Messenger Bot Components</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -56,7 +56,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> messenger-bot-components</h1>
+			<h1> Messenger Bot Components</h1>
 		</div>
 	</div>
 </header>
@@ -68,13 +68,30 @@
 				<h1 align="center">
 					Messenger Bot Components
 				</h1>
-				<p><img src="https://img.shields.io/npm/types/typescript.svg" alt="npm type definitions">
-				<a href="https://travis-ci.org/ALiangLiang/messenger-bot-components"><img src="https://travis-ci.org/ALiangLiang/messenger-bot-components.svg?branch=master" alt="Build Status"></a></p>
+				<p><a href="https://www.npmjs.com/package/messenger-bot-components"><img src="https://img.shields.io/npm/v/messenger-bot-components.svg" alt="npm"></a>
+					<a href="https://travis-ci.org/ALiangLiang/messenger-bot-components"><img src="https://travis-ci.org/ALiangLiang/messenger-bot-components.svg?branch=master" alt="Build Status"></a>
+					<a href="https://coveralls.io/github/ALiangLiang/messenger-bot-components?branch=master"><img src="https://coveralls.io/repos/github/ALiangLiang/messenger-bot-components/badge.svg?branch=master" alt="Coverage Status"></a>
+					<img src="https://img.shields.io/npm/types/typescript.svg" alt="npm type definitions">
+				<a href="https://github.com/ALiangLiang/messenger-bot-components/blob/master/LICENSE"><img src="https://img.shields.io/github/license/ALiangLiang/messenger-bot-components.svg" alt="GitHub"></a></p>
 				<p>Component kit of Messenger platform. Friendly for developers and help you validate
 					structure of bot message. This project is write by TypeScript, so you can use it
 				with <a href="https://code.visualstudio.com/docs/languages/typescript#_snippets"><strong>Snippets</strong></a>.</p>
-				<h2 id="example">Example</h2>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> body = {
+				<h2 id="table-of-contents">Table of Contents</h2>
+				<ul>
+					<li><a href="#Usage">Usage</a></li>
+					<li><a href="#Features">Features</a></li>
+					<li><a href="#Document">Document</a></li>
+					<li><a href="#Notes">Notes</a></li>
+					<li><a href="#Contributing">Contributing</a></li>
+					<li><a href="#TODO">TODO</a></li>
+				</ul>
+				<h2 id="usage">Usage</h2>
+				<pre><code class="language-sh"><span class="hljs-comment"># Install this dependency first</span>
+npm install messenger-bot-components --save</code></pre>
+				<pre><code class="language-js"><span class="hljs-comment">// index.js</span>
+<span class="hljs-keyword">import</span> { TemplateGeneric, ButtonUrl, ButtonPostback } <span class="hljs-keyword">from</span> <span class="hljs-string">'messenger-bot-components'</span>
+
+<span class="hljs-keyword">const</span> body = {
   <span class="hljs-attr">recipient</span>: {
     <span class="hljs-attr">id</span>: <span class="hljs-string">'USER_ID'</span>
   },
@@ -98,92 +115,25 @@
   ])
 }
 
+<span class="hljs-built_in">console</span>.dir(<span class="hljs-built_in">JSON</span>.stringify(<span class="hljs-built_in">JSON</span>.parse(body)))
+<span class="hljs-comment">// Output the schema that you can send to Messenger</span>
+
 <span class="hljs-comment">// Directly send to Messenger and client.</span>
 SendToMessenger(body)</code></pre>
-				<h2 id="feature">Feature</h2>
-				<h3 id="friendly-codes">Friendly codes</h3>
-				<p>Sometimes you are tired of complicated codes looks like</p>
-				<h4 id="original-codes">original codes</h4>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> body = {
-  <span class="hljs-attr">recipient</span>: {
-    <span class="hljs-attr">id</span>: <span class="hljs-string">'USER_ID'</span>
-  },
-  <span class="hljs-attr">message</span>: {
-    <span class="hljs-attr">attachment</span>: {
-      <span class="hljs-attr">type</span>: <span class="hljs-string">'template'</span>,
-      <span class="hljs-attr">payload</span>: {
-        <span class="hljs-attr">template_type</span>: <span class="hljs-string">'generic'</span>,
-        <span class="hljs-attr">elements</span>: [
-          {
-            <span class="hljs-attr">title</span>: <span class="hljs-string">'Welcome to Peter\'s Hats'</span>,
-            <span class="hljs-attr">image_url</span>: <span class="hljs-string">'https://petersfancybrownhats.com/company_image.png'</span>,
-            <span class="hljs-attr">subtitle</span>: <span class="hljs-string">'We\'ve got the right hat for everyone.'</span>,
-            <span class="hljs-attr">default_action</span>: {
-              <span class="hljs-attr">type</span>: <span class="hljs-string">'web_url'</span>,
-              <span class="hljs-attr">url</span>: <span class="hljs-string">'https://peterssendreceiveapp.ngrok.io/view?item=103'</span>,
-              <span class="hljs-attr">messenger_extensions</span>: <span class="hljs-literal">true</span>,
-              <span class="hljs-attr">webview_height_ratio</span>: <span class="hljs-string">'tall'</span>,
-              <span class="hljs-attr">fallback_url</span>: <span class="hljs-string">'https://peterssendreceiveapp.ngrok.io/'</span>
-            },
-            <span class="hljs-attr">buttons</span>: [
-              {
-                <span class="hljs-attr">type</span>: <span class="hljs-string">'web_url'</span>,
-                <span class="hljs-attr">url</span>: <span class="hljs-string">'https://petersfancybrownhats.com'</span>,
-                <span class="hljs-attr">title</span>: <span class="hljs-string">'View Website'</span>
-              }, {
-                <span class="hljs-attr">type</span>: <span class="hljs-string">'postback'</span>,
-                <span class="hljs-attr">title</span>: <span class="hljs-string">'Start Chatting'</span>,
-                <span class="hljs-attr">payload</span>: <span class="hljs-string">'DEVELOPER_DEFINED_PAYLOAD'</span>
-              }
-            ]
-          }
-        ]
-      }
-    }
-  }
-}</code></pre>
-				<p>OMG!! It&#39;s sooooooo ugly. But now, you can write it in another way.</p>
-				<h4 id="use-this-module">use this module</h4>
-				<pre><code class="language-js"><span class="hljs-keyword">import</span> { TemplateGeneric, ButtonUrl, ButtonPostback } <span class="hljs-keyword">from</span> <span class="hljs-string">'messenger-bot-components'</span>
-
-<span class="hljs-keyword">const</span> body = {
-  <span class="hljs-attr">recipient</span>: {
-    <span class="hljs-attr">id</span>: <span class="hljs-string">'USER_ID'</span>
-  },
-  <span class="hljs-attr">message</span>: <span class="hljs-keyword">new</span> TemplateGeneric([
-    TemplateGeneric.Element(<span class="hljs-string">'Welcome to Peter\'s Hats'</span>, {
-      <span class="hljs-attr">imageUrl</span>: <span class="hljs-string">'https://petersfancybrownhats.com/company_image.png'</span>,
-      <span class="hljs-attr">subtitle</span>: <span class="hljs-string">'We\'ve got the right hat for everyone.'</span>,
-      <span class="hljs-attr">defaultAction</span>: <span class="hljs-keyword">new</span> TemplateGeneric.Element.DefaultAction(
-        <span class="hljs-string">'https://webview'</span>,
-        {
-          <span class="hljs-attr">webviewHeightRatio</span>: TemplateGeneric.Element.DefaultAction.WebviewHeightRatio.COMPACT,
-          <span class="hljs-attr">messengerExtensions</span>: <span class="hljs-literal">true</span>,
-          <span class="hljs-attr">fallbackUrl</span>: <span class="hljs-string">'https://website-not-support-messenger-extensions'</span>
-        }
-      ),
-      <span class="hljs-attr">buttons</span>: [
-        <span class="hljs-keyword">new</span> ButtonUrl(<span class="hljs-string">'View Website'</span>, <span class="hljs-string">'https://petersfancybrownhats.com'</span>),
-        <span class="hljs-keyword">new</span> ButtonPostback(<span class="hljs-string">'Start Chatting'</span>, <span class="hljs-string">'DEVELOPER_DEFINED_PAYLOAD'</span>)
-      ]
-    })
-  ]).toJSON()
-}</code></pre>
-				<h2 id="usage">Usage</h2>
-				<p><code>npm install messenger-bot-components --save</code></p>
-				<pre><code class="language-js"><span class="hljs-keyword">import</span> { Text } <span class="hljs-keyword">from</span> <span class="hljs-string">'messenger-bot-components'</span>
-
-<span class="hljs-keyword">const</span> body = {
-  <span class="hljs-attr">recipient</span>: {
-    <span class="hljs-attr">id</span>: <span class="hljs-string">'USER_ID'</span>
-  },
-  <span class="hljs-attr">message</span>: <span class="hljs-keyword">new</span> Text(<span class="hljs-string">'some words'</span>)
-};
-<span class="hljs-comment">// And then you can pass this body to user.</span></code></pre>
+				<h2 id="features">Features</h2>
+				<ul>
+					<li>Friendly code</li>
+					<li>Snippets (If your IDE support it. e.g. <a href="https://code.visualstudio.com/docs/languages/typescript#_snippets">VS Code</a>)</li>
+					<li>Type and parameter checking and restrictions (If you write with TypeScript)</li>
+				</ul>
+				<h2 id="document">Document</h2>
+				<ul>
+					<li><a href="https://aliangliang.github.io/messenger-bot-components/">The docuement generated by typedoc</a></li>
+				</ul>
 				<h2 id="notes">Notes</h2>
 				<p>All components follow a rule. The required parameters are all placed in foward
 				arguments. Other optional parameters setting in last argument.<br>For example:</p>
-				<pre><code class="language-js"><span class="hljs-comment">// The first two arguments are required.</span>
+				<pre><code class="language-js"><span class="hljs-comment">// In url button, the first two arguments are required.</span>
 <span class="hljs-comment">// Last argument with object is used to setting optional parameters.</span>
 <span class="hljs-keyword">new</span> ButtonUrl(
   <span class="hljs-string">'View Website'</span>, <span class="hljs-comment">/* required */</span>
@@ -204,7 +154,6 @@ SendToMessenger(body)</code></pre>
 					<li><input disabled="" type="checkbox"> update more components</li>
 					<li><input disabled="" type="checkbox"> a cute logo</li>
 					<li><input disabled="" type="checkbox"> perfect english README</li>
-					<li><input disabled="" type="checkbox"> schedule ci</li>
 				</ul>
 				<h2 id="license">License</h2>
 				<p>MIT</p>
@@ -221,9 +170,6 @@ SendToMessenger(body)</code></pre>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_template_index_.html">"<wbr>Template/index"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_classtoinvokable_.html">"class<wbr>ToInvokable"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_index_.html">"index"</a>
