@@ -13,16 +13,13 @@ describe('TemplateReceipt', function () {
       sharable: true,
       timestamp: '1555232852000',
       elements: [
-        new TemplateReceipt.Element('tea', {
-          label: 'bag',
-          amount: 1
-        }, {
+        new TemplateReceipt.Element('tea', 40, {
           subtitle: 'Taiwan black tea',
           quantity: 1,
           currency: 'TWD',
           imageUrl: 'https://dummyimage.com/600x400/000/fff'
         }),
-        new TemplateReceipt.Element('coke', {}, {
+        new TemplateReceipt.Element('coke', 54, {
           subtitle: 'coke cola',
           quantity: 2,
           currency: 'TWD',
@@ -62,17 +59,14 @@ describe('TemplateReceipt', function () {
           timestamp: '1555232852000',
           elements: [{
             title: 'tea',
-            price: {
-              label: 'bag',
-              amount: 1
-            },
+            price: 40,
             subtitle: 'Taiwan black tea',
             quantity: 1,
             currency: 'TWD',
             image_url: 'https://dummyimage.com/600x400/000/fff'
           }, {
             title: 'coke',
-            price: {},
+            price: 54,
             subtitle: 'coke cola',
             quantity: 2,
             currency: 'TWD',
