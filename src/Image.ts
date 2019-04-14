@@ -3,7 +3,7 @@
  */
 import { Abstract } from './Abstract'
 
-interface ImageOption {
+export interface ImageOption {
   isReusable?: Boolean
 }
 

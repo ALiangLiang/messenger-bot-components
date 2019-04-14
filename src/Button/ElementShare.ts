@@ -5,7 +5,7 @@ import { Abstract } from '../Abstract'
 
 import { TemplateGeneric } from '../Template/Generic'
 
-interface ButtonElementShareOption {
+export interface ButtonElementShareOption {
   shareContents?: TemplateGeneric
 }
 

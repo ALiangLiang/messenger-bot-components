@@ -10,12 +10,12 @@ import { ButtonElementShare } from '../Button/ElementShare'
 import { ButtonAccountLink } from '../Button/AccountLink'
 import { ButtonAccountUnlink } from '../Button/AccountUnlink'
 
-enum MediaType {
+export enum MediaType {
   IMAGE = 'image',
   VIDEO = 'video',
 }
 
-interface TemplateElementMediaOption {
+export interface TemplateElementMediaOption {
   mediaType: MediaType | 'image' | 'video'
   attachmentId?: String
   url?: String
@@ -46,7 +46,7 @@ export class TemplateElementMedia extends Abstract {
   }
 }
 
-interface TemplateMediaOption {
+export interface TemplateMediaOption {
   sharable?: Boolean
 }
 

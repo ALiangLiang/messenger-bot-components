@@ -10,7 +10,7 @@ import { ButtonElementShare } from '../Button/ElementShare'
 import { ButtonAccountLink } from '../Button/AccountLink'
 import { ButtonAccountUnlink } from '../Button/AccountUnlink'
 
-interface TemplateElementListOption {
+export interface TemplateElementListOption {
   imageUrl?: String
   subtitle?: String
   defaultAction?: ButtonUrl
@@ -34,12 +34,12 @@ export class TemplateElementList extends Abstract {
   }
 }
 
-const enum TopElementStyle {
+export enum TopElementStyle {
   COMPACT = 'compact',
   LARGE = 'large',
 }
 
-interface TemplateListOption {
+export interface TemplateListOption {
   topElementStyle?: TopElementStyle | 'compact' | 'large'
   buttons?: ButtonUrl[] | ButtonPostback[] | ButtonPhoneNumber[] | ButtonElementShare[] | ButtonAccountLink[] | ButtonAccountUnlink[],
   sharable?: Boolean

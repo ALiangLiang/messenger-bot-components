@@ -7,7 +7,7 @@ import { ButtonUrl } from './Button/Url'
 import { ButtonPostback } from './Button/Postback'
 import { ButtonNested } from './Button/Nested'
 
-interface PersistentMenuLocaleOption {
+export interface PersistentMenuLocaleOption {
   composerInputDisabled?: Boolean
 }
 

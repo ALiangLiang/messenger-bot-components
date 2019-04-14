@@ -21,7 +21,7 @@ export class DefaultAction extends ButtonUrl {
   }
 }
 
-interface TemplateElementGenericOption {
+export interface TemplateElementGenericOption {
   imageUrl?: String
   subtitle?: String
   defaultAction?: DefaultAction

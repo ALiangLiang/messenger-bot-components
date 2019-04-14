@@ -3,14 +3,14 @@
  */
 import { Abstract } from './Abstract'
 
-enum ContentType {
+export enum ContentType {
   TEXT = 'text',
   LOCATION = 'location',
   USER_PHONE_NUMBER = 'user_phone_number',
   USER_EMAIL = 'user_email'
 }
 
-interface QuickReplyItemOption {
+export interface QuickReplyItemOption {
   title?: String
   payload?: String
   imageUrl?: String

@@ -3,7 +3,7 @@
  */
 import { Abstract } from '../Abstract'
 
-interface TemplateElementReceiptOption {
+export interface TemplateElementReceiptOption {
   subtitle?: String
   quantity?: Number
   currency?: String
@@ -31,7 +31,7 @@ export class TemplateElementReceipt extends Abstract {
 /**
  * @see {@link https://developers.facebook.com/docs/messenger-platform/reference/template/receipt#address}
  */
-interface Address {
+export interface Address {
   street1: String
   street2?: String
   city: String
@@ -43,7 +43,7 @@ interface Address {
 /**
  * @see {@link https://developers.facebook.com/docs/messenger-platform/reference/template/receipt#summary}
  */
-interface Summary {
+export interface Summary {
   subtotal?: String
   shippingCost?: Number
   totalTax?: Number
@@ -53,12 +53,12 @@ interface Summary {
 /**
  * @see {@link https://developers.facebook.com/docs/messenger-platform/reference/template/receipt#adjustment}
  */
-interface Adjustments {
+export interface Adjustments {
   name: String
   amount: Number
 }
 
-interface TemplateReceiptOption {
+export interface TemplateReceiptOption {
   sharable?: Boolean
   timestamp?: String
   elements?: TemplateElementReceipt[]
