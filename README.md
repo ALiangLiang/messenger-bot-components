@@ -1,10 +1,14 @@
+<!-- markdownlint-disable MD033 MD041 -->
 <h1 align="center">
   Messenger Bot Components
 </h1>
 
 ![npm type definitions](https://img.shields.io/npm/types/typescript.svg)
+[![Build Status](https://travis-ci.org/ALiangLiang/messenger-bot-components.svg?branch=master)](https://travis-ci.org/ALiangLiang/messenger-bot-components)
 
-Component kit of Messenger platform. Friendly for developers and help you validate structure of bot message. This project is write by TypeScript, so you can use it with [**Snippets**](https://code.visualstudio.com/docs/languages/typescript#_snippets).
+Component kit of Messenger platform. Friendly for developers and help you validate
+structure of bot message. This project is write by TypeScript, so you can use it
+with [**Snippets**](https://code.visualstudio.com/docs/languages/typescript#_snippets).
 
 ## Example
 
@@ -17,11 +21,14 @@ const body = {
     new TemplateGeneric.Element('Generic template Title', {
       imageUrl: 'A image',
       subtitle: 'It\s useful!!',
-      defaultAction: new TemplateGeneric.Element.DefaultAction('https://webview', {
-        webviewHeightRatio: TemplateGeneric.Element.DefaultAction.WebviewHeightRatio.COMPACT,
-        messengerExtensions: true,
-        fallbackUrl: 'https://website-not-support-messenger-extensions'
-      }),
+      defaultAction: new TemplateGeneric.Element.DefaultAction(
+        'https://webview',
+        {
+          webviewHeightRatio: TemplateGeneric.Element.DefaultAction.WebviewHeightRatio.COMPACT,
+          messengerExtensions: true,
+          fallbackUrl: 'https://website-not-support-messenger-extensions'
+        }
+      ),
       buttons: [
         new ButtonUrl('Report Issue', 'https://github.com/ALiangLiang/messenger-bot-components/issues'),
         new ButtonPostback('Start Chatting', 'DEVELOPER_DEFINED_PAYLOAD')
@@ -98,11 +105,14 @@ const body = {
     TemplateGeneric.Element('Welcome to Peter\'s Hats', {
       imageUrl: 'https://petersfancybrownhats.com/company_image.png',
       subtitle: 'We\'ve got the right hat for everyone.',
-      defaultAction: new TemplateGeneric.Element.DefaultAction('https://webview', {
-        webviewHeightRatio: TemplateGeneric.Element.DefaultAction.WebviewHeightRatio.COMPACT,
-        messengerExtensions: true,
-        fallbackUrl: 'https://website-not-support-messenger-extensions'
-      }),
+      defaultAction: new TemplateGeneric.Element.DefaultAction(
+        'https://webview',
+        {
+          webviewHeightRatio: TemplateGeneric.Element.DefaultAction.WebviewHeightRatio.COMPACT,
+          messengerExtensions: true,
+          fallbackUrl: 'https://website-not-support-messenger-extensions'
+        }
+      ),
       buttons: [
         new ButtonUrl('View Website', 'https://petersfancybrownhats.com'),
         new ButtonPostback('Start Chatting', 'DEVELOPER_DEFINED_PAYLOAD')
@@ -130,7 +140,8 @@ const body = {
 
 ## Notes
 
-All components follow a rule. The required parameters are all placed in foward arguments. Other optional parameters setting in last argument.  
+All components follow a rule. The required parameters are all placed in foward
+arguments. Other optional parameters setting in last argument.  
 For example:
 
 ```js
@@ -138,7 +149,7 @@ For example:
 // Last argument with object is used to setting optional parameters.
 new ButtonUrl(
   'View Website', /* required */
-  'https://peterssendreceiveapp.ngrok.io/view?item=103', /* required */ 
+  'https://peterssendreceiveapp.ngrok.io/view?item=103', /* required */
   {
     messengerExtensions: true,  /* optional */
     webviewHeightRatio: 'tall', /* optional */
@@ -149,7 +160,8 @@ new ButtonUrl(
 
 ## Contributing
 
-Messenger Platform API is still on dev. So we need update the module usually. If you like this package, welcome to help me maintain the tool. :)
+Messenger Platform API is still on dev. So we need update the module usually.
+If you like this package, welcome to help me maintain the tool. :)
 
 ## TODO
 
