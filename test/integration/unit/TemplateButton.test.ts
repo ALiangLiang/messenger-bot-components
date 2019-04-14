@@ -2,7 +2,7 @@ import { expect } from 'chai'
 
 import { TemplateButton, ButtonUrl, ButtonPostback } from '../../../src'
 
-describe('TemplateGeneric', function () {
+describe('TemplateButton', function () {
   it('should work', function () {
     const json = (new TemplateButton('foo', [
       new ButtonUrl('bar', 'https://test.top'),
