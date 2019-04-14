@@ -1,3 +1,6 @@
+/**
+ * @module ButtonNested
+ */
 import { Abstract } from '../Abstract'
 
 import { ButtonUrl } from './Url'

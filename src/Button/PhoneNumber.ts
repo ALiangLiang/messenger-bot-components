@@ -1,3 +1,6 @@
+/**
+ * @module ButtonPhoneNumber
+ */
 import { Abstract } from '../Abstract'
 
 /**

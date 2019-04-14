@@ -1,3 +1,7 @@
+/**
+ * @module Abstract
+ */
+
 function serializer (object: Object) {
   try {
     return JSON.parse(JSON.stringify(object, jsonReplacer))

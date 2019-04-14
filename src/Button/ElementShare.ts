@@ -1,3 +1,6 @@
+/**
+ * @module ButtonElementShare
+ */
 import { Abstract } from '../Abstract'
 
 import { TemplateGeneric } from '../Template/Generic'

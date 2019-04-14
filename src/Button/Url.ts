@@ -1,3 +1,6 @@
+/**
+ * @module ButtonUrl
+ */
 import { Abstract } from '../Abstract'
 
 export enum WebviewHeightRatio {

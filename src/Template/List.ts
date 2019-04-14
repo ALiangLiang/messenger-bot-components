@@ -1,3 +1,6 @@
+/**
+ * @module TemplateList
+ */
 import { Abstract } from '../Abstract'
 
 import { ButtonUrl } from '../Button/Url'

@@ -1,3 +1,6 @@
+/**
+ * @module ButtonPostback
+ */
 import { Abstract } from '../Abstract'
 
 /**

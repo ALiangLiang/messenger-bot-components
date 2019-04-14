@@ -1,3 +1,6 @@
+/**
+ * @module Audio
+ */
 import { Abstract } from './Abstract'
 
 /**

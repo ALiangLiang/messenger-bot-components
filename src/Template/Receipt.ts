@@ -1,3 +1,6 @@
+/**
+ * @module TemplateReceipt
+ */
 import { Abstract } from '../Abstract'
 
 interface TemplateElementReceiptOption {

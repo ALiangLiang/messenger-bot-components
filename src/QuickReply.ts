@@ -1,3 +1,6 @@
+/**
+ * @module QuickReply
+ */
 import { Abstract } from './Abstract'
 
 enum ContentType {

@@ -1,3 +1,6 @@
+/**
+ * @module ButtonAccountUnlink
+ */
 import { Abstract } from '../Abstract'
 
 /**

@@ -1,3 +1,6 @@
+/**
+ * @module Text
+ */
 import { Abstract } from './Abstract'
 
 /**

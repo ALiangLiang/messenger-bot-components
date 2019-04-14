@@ -1,3 +1,6 @@
+/**
+ * @module GetStarted
+ */
 import { Abstract } from './Abstract'
 
 /**

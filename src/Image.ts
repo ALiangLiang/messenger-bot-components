@@ -1,3 +1,6 @@
+/**
+ * @module Image
+ */
 import { Abstract } from './Abstract'
 
 interface ImageOption {

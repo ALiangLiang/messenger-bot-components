@@ -1,3 +1,6 @@
+/**
+ * @module TemplateGeneric
+ */
 import { Abstract } from '../Abstract'
 
 import { ButtonUrl, ButtonUrlOption } from '../Button/Url'
