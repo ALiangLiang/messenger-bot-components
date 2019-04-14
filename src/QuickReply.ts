@@ -1,6 +1,6 @@
 import { Abstract } from './Abstract'
 
-export enum ContentType {
+enum ContentType {
   TEXT = 'text',
   LOCATION = 'location',
   USER_PHONE_NUMBER = 'user_phone_number',
