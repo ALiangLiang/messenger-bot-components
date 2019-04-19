@@ -1,14 +1,23 @@
 export { Abstract } from './Abstract'
-export { File } from './File'
+
+// Profile API
 export { GetStarted } from './GetStarted'
 export { Greeting } from './Greeting'
+export { HomeUrl } from './HomeUrl'
 export { PersistentMenu } from './PersistentMenu'
-export { Text } from './Text'
-export { Image } from './Image'
-export { QuickReply } from './QuickReply'
-export { Video } from './Video'
-export { Audio } from './Audio'
+export { TargetAudience } from './TargetAudience'
 
+// Quick Reply
+export { QuickReply } from './QuickReply'
+
+// Message
+export { Audio } from './Audio'
+export { File } from './File'
+export { Image } from './Image'
+export { Text } from './Text'
+export { Video } from './Video'
+
+// Buttons
 export {
   ButtonAccountLink,
   ButtonAccountUnlink,
@@ -19,6 +28,7 @@ export {
   ButtonUrl
 } from './Button/'
 
+// Templates
 export {
   TemplateButton,
   TemplateGeneric,
