@@ -15,7 +15,9 @@ function sendApi (api: String, json: Object) {
 export function send (message: Object) {
   const json = {
     recipient: { id: process.env.PSID },
-    message
+    message,
+    messaging_type: 'MESSAGE_TAG',
+    tag: 'FEATURE_FUNCTIONALITY_UPDATE'
   }
 
   return sendApi('messages', json)
